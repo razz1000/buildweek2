@@ -1,0 +1,20 @@
+.question-mark {
+  margin-left: auto;
+}
+.sidebar-top-text {
+  display: inline-block;
+  font-weight: 500;
+}
+.sidebar-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid gray;
+  border-width: 0.1px;
+  border-radius: 15px;
+}
+.top-text {
+  margin-top: 10px;
+}
+.bottom-text {
+  margin-bottom: 10px;
+}

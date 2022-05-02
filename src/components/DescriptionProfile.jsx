@@ -1,23 +1,19 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-const DescriptionProfile = () => {
+const DescriptionProfile = ({ profileData }) => {
   return (
     <div>
       <Row className="description-section">
         <Col md={8}>
-          <div>
-            <h3>Daria Alexandra</h3>
-            <p className="bio-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-              corporis magnam perspiciatis deserunt rerum odio iure fuga nisi?
-              Commodi, soluta!
-            </p>
+          <div className="bio-text">
+            <h3>{profileData.name + profileData.surname} </h3>
+            <p>{profileData.bio}</p>
           </div>
           <div>
             <p style={{ textAlign: "start", marginLeft: "2rem" }}>
-              London Area, United Kingdom
-              <a href="#" className="links ">
+              {profileData.area}
+              <a href="#" className="links " style={{ marginLeft: "0.5rem" }}>
                 Contact Info
               </a>
             </p>

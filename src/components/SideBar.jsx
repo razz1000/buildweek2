@@ -3,11 +3,18 @@ import SeeMoreSideBar from './SeeMoreSideBar'
 import { Container, Row } from 'react-bootstrap'
 import './stylesheets/sideBar.css'
 
-const SideBar = ({ heading }) => {
+const SideBar = ({ heading, data }) => {
   return (
     <Container fluid className="sidebar-container">
       <h2 className="sidebar-heading">{heading}</h2>
-      <Row>
+      {data.slice(0, 8).map((profile) => {
+        return (
+          <Row>
+            <SinglePerson profile={profile} />
+          </Row>
+        )
+      })}
+      {/* <Row>
         <SinglePerson />
       </Row>
       <Row>
@@ -18,10 +25,7 @@ const SideBar = ({ heading }) => {
       </Row>
       <Row>
         <SinglePerson />
-      </Row>
-      <Row>
-        <SinglePerson />
-      </Row>
+      </Row> */}
       <Row className="d-flex justify-content-center see-more-row">
         <SeeMoreSideBar />
       </Row>

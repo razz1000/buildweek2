@@ -1,5 +1,5 @@
 .see-more-row {
-  border-top: solid gray;
+  border-top: solid rgb(224, 223, 220);
   border-width: 0.3px;
   margin-top: 5px;
 }
@@ -7,14 +7,16 @@
   font-weight: 400;
 }
 .sidebar-container {
-  border: solid gray;
+  border: solid rgb(224, 223, 220);
   border-radius: 15px;
   border-width: 0.1px;
   margin-top: 8px;
+  background-color: white;
+  color: rgb(102, 102, 102);
 }
 .see-more-row:hover {
   cursor: pointer;
-  background-color: gray;
+  background-color: rgb(224, 223, 220);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }

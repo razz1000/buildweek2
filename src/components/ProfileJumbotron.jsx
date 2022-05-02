@@ -5,7 +5,7 @@ import ProfileModal from "./ProfileModal";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
 
-const ProfileJumbotron = ({ profiledata, editprofiledata }) => {
+const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <div className="profile-jumbotron ">
@@ -27,6 +27,7 @@ const ProfileJumbotron = ({ profiledata, editprofiledata }) => {
       </Row>
       <Row>
         <ProfileModal
+          putprofiledata={putprofiledata}
           profiledata={profiledata}
           editprofiledata={editprofiledata}
           show={modalShow}

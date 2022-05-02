@@ -4,13 +4,15 @@
 .sidebar-top-text {
   display: inline-block;
   font-weight: 500;
+  color: rgb(102, 102, 102);
 }
 .sidebar-row {
   margin-top: 10px;
   margin-bottom: 10px;
-  border: solid gray;
+  border: solid rgb(224, 223, 220);
   border-width: 0.1px;
   border-radius: 15px;
+  background-color: white;
 }
 .top-text {
   margin-top: 10px;

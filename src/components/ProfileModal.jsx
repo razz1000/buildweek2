@@ -1,14 +1,14 @@
 import React from "react";
 import { Modal, Container, Button, Form } from "react-bootstrap";
+import { useState } from "react";
+import { useEffect } from "react";
+
 const ProfileModal = (props) => {
-  let object = {};
-  const getDataFromForm = (e, field) => {
-    object = {
-      ...object,
-      [field]: "" + e.target.value,
-    };
-    console.log(object);
-  };
+  const [newData, setNewData] = useState(props.profiledata);
+
+  console.log("newData: ", newData);
+  console.log("props: ", props.profiledata);
+  useEffect(() => setNewData(props.profiledata), []);
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
@@ -18,31 +18,34 @@ const ProfileModal = (props) => {
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
-          <Form onSubmit={() => props.editprofiledata("how about now?")}>
+          <Form>
             <Form.Group>
               <br />
               <Form.Control
                 value={props.profiledata.name}
                 type="text"
                 placeholder="First Name"
-                onInput={(e) => getDataFromForm(e, "name")}
+                onChange={(e) => props.editprofiledata(e, "name")}
               />
               <br />
               <Form.Control
                 value={props.profiledata.surname}
                 type="text"
                 placeholder="Last name"
+                onChange={(e) => props.editprofiledata(e, "surname")}
               />
               <br />
               <Form.Control
                 value={props.profiledata.email}
                 type="email"
                 placeholder="Email"
+                onChange={(e) => props.editprofiledata(e, "email")}
               />
               <br />
               <Form.Group
                 value={props.profiledata.bio}
                 controlId="exampleForm.ControlTextarea1"
+                onChange={(e) => props.editprofiledata(e, "bio")}
               >
                 <Form.Control as="textarea" rows={3} placeholder="Bio" />
               </Form.Group>
@@ -60,7 +63,6 @@ const ProfileModal = (props) => {
               />
               <br />
             </Form.Group>
-            <Button type="onSubmit">Save</Button>
           </Form>
         </Container>
       </Modal.Body>
@@ -68,8 +70,9 @@ const ProfileModal = (props) => {
         <Button
           type="onSubmit"
           onClick={() => {
-            props.editprofiledata("clicked");
-            // props.onHide();
+            console.log("Click");
+            props.putprofiledata();
+            props.onHide();
           }}
         >
           Save

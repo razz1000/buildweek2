@@ -10,26 +10,36 @@ const ProfilePage = () => {
   const [allProfiles, setAllProfiles] = useState([]);
   const [profileData, setProfileData] = useState([]);
 
-  const editProfileData = (data) => {
-    console.log(data);
+  const editProfileData = (e, field) => {
+    console.log(field);
+    setProfileData({
+      ...profileData,
+      [field]: e.target.value,
+    });
   };
 
   const putProfileData = async () => {
-    const response = await fetch(
-      "https://striveschool-api.herokuapp.com/api/profile/me",
-      {
-        method: "PUT",
-        headers: {
-          authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
-        },
-      }
-    );
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/",
+        {
+          method: "PUT",
+          body: JSON.stringify(profileData),
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+            "Content-type": "application/json",
+          },
+        }
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    setProfileData(data);
-    console.log(data);
+      setProfileData(data);
+      console.log("✅Everything went well, infos were updated!", data);
+    } catch (error) {
+      console.log("❌ something went wrong: ", error);
+    }
   };
 
   const fetchAllProfiles = async () => {
@@ -77,6 +87,7 @@ const ProfilePage = () => {
           <ProfileJumbotron
             profiledata={profileData}
             editprofiledata={editProfileData}
+            putprofiledata={putProfileData}
           />
         </Col>
         <Col md={4}>

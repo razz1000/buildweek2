@@ -1,12 +1,13 @@
 import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+
 const DescriptionProfile = ({ profiledata }) => {
   return (
     <div>
       <Row className="description-section">
         <Col md={8}>
           <div className="bio-text">
-            <h3>{profiledata.name + profiledata.surname} </h3>
+            <h3>{profiledata.name + " " + profiledata.surname} </h3>
             <p>{profiledata.bio}</p>
           </div>
           <div>
@@ -40,9 +41,21 @@ const DescriptionProfile = ({ profiledata }) => {
           </div>
         </Col>
 
-        <Col md={4} className="d-flex justify-content-center">
+        <Col md={3} className="d-flex justify-content-start">
           <div>
-            <p>Strive School</p>
+            <p>
+              <img
+                src="https://media-exp1.licdn.com/dms/image/C4D0BAQEFWO_s8a0FHQ/company-logo_200_200/0/1647618816994?e=2147483647&v=beta&t=hgwtIzbwPl5z4OGvOxQSn6QWkVk3C_GlW2lrqqbJkYA"
+                alt=""
+                width={"30px"}
+              />
+              <a
+                href="https://www.linkedin.com/school/epicodeglobal/"
+                target="_blank"
+              >
+                Strive School
+              </a>
+            </p>
           </div>
         </Col>
       </Row>

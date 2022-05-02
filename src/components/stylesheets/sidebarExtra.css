@@ -5,7 +5,9 @@
 }
 
 .sidebar-main-row {
-  border: solid gray;
+  background-color: white;
+  color: rgb(25, 25, 25);
+  border: solid rgb(224, 223, 220);
   border-width: 0.1px;
   border-radius: 15px;
   margin-top: 10px;

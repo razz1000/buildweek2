@@ -1,18 +1,21 @@
+import SideBar from './SideBar'
 import React from "react";
-import {Container, Row, Col} from "react-bootstrap"
-
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileJumbotron from "./ProfileJumbotron";
 
 const ProfilePage = () => {
-    return(
-        <Container>
-            <Row>
-                <Col md={8}></Col>
-                <Col md={4}></Col>
-            </Row>
-
-        </Container>
-
-    )
+  return (
+    <Container>
+      <Row>
+        <Col md={8}>
+          <ProfileJumbotron />
+        </Col>
+        <Col md={4}>
+          <SideBar heading="People also viewed" />
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
 export default ProfilePage

@@ -1,0 +1,20 @@
+.see-more-row {
+  border-top: solid gray;
+  border-width: 0.3px;
+  margin-top: 5px;
+}
+.sidebar-heading {
+  font-weight: 400;
+}
+.sidebar-container {
+  border: solid gray;
+  border-radius: 15px;
+  border-width: 0.1px;
+  margin-top: 8px;
+}
+.see-more-row:hover {
+  cursor: pointer;
+  background-color: gray;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

@@ -4,7 +4,7 @@ import DescriptionProfile from "./DescriptionProfile";
 
 const ProfileJumbotron = ({ profileData }) => {
   return (
-    <div className="profile-jumbotron">
+    <div className="profile-jumbotron ">
       <Row>
         <img
           className="profile-cover"

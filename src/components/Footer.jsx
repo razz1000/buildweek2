@@ -40,14 +40,14 @@ let Footer = () => {
                 <Col>
                 <ListGroup className="footer-listgroup">
                     <div className="icon-and-text-footer">
-                    <i class="bi bi-question-circle-fill footer-icons"></i>
+                    <i className="bi bi-question-circle-fill footer-icons"></i>
                         <div>           
                         <p className="text-next-to-icon p-footer">Questions?</p>              
                         <p className="text-next-to-icon2 p-footer">Visit our Help Center</p>
                         </div>
                     </div>
                     <div className="icon-and-text-footer">
-                    <i class="bi bi-gear-fill footer-icons"></i>
+                    <i className="bi bi-gear-fill footer-icons"></i>
                         <div>           
                         <p className="text-next-to-icon p-footer">Manage your account and privacy</p>              
                         <p className="text-next-to-icon2 p-footer">Go to your your settings</p>

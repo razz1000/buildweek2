@@ -28,14 +28,20 @@ const DescriptionProfile = ({ profiledata }) => {
           <div className="d-flex ml-4 mb-2">
             <button
               type="button"
-              class="btn full-blue-btn text-white rounded-pill ml-1"
+              className="btn full-blue-btn text-white rounded-pill ml-1"
             >
               Open to
             </button>
-            <button type="button" class="btn blue-border-btn rounded-pill mx-2">
+            <button
+              type="button"
+              className="btn blue-border-btn rounded-pill mx-2"
+            >
               Add profile section
             </button>
-            <button type="button" class="btn gray-border-btn rounded-pill mx-2">
+            <button
+              type="button"
+              className="btn gray-border-btn rounded-pill mx-2"
+            >
               more
             </button>
           </div>

@@ -23,7 +23,10 @@ const SinglePerson = (props) => {
             <p className="occupation">{props.profile.title}</p>
           </Row>
           <Row>
-            <button type="button" class="btn gray-border-btn rounded-pill mx-2">
+            <button
+              type="button"
+              className="btn gray-border-btn rounded-pill mx-2"
+            >
               Connect
             </button>
           </Row>

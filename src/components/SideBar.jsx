@@ -1,7 +1,7 @@
-import SinglePerson from './SinglePerson'
-import SeeMoreSideBar from './SeeMoreSideBar'
-import { Container, Row } from 'react-bootstrap'
-import './stylesheets/sideBar.css'
+import SinglePerson from "./SinglePerson";
+import SeeMoreSideBar from "./SeeMoreSideBar";
+import { Container, Row } from "react-bootstrap";
+import "./stylesheets/sideBar.css";
 
 const SideBar = ({ heading, data }) => {
   return (
@@ -9,10 +9,10 @@ const SideBar = ({ heading, data }) => {
       <h2 className="sidebar-heading">{heading}</h2>
       {data.slice(0, 8).map((profile) => {
         return (
-          <Row>
+          <Row key={profile._id}>
             <SinglePerson profile={profile} />
           </Row>
-        )
+        );
       })}
       {/* <Row>
         <SinglePerson />
@@ -30,6 +30,6 @@ const SideBar = ({ heading, data }) => {
         <SeeMoreSideBar />
       </Row>
     </Container>
-  )
-}
-export default SideBar
+  );
+};
+export default SideBar;

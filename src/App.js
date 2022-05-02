@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "./components/ProfilePage";
 import NavBar from "./components/NavBar";
 
+import EducationCard from "./components/EducationCard"
 import "./App.css";
 
 import "./stylesheets/profile-jumbotron.css";
@@ -15,7 +16,8 @@ function App() {
         <Routes>
           <Route path={"/profile-page"} element={<ProfilePage />} />
         </Routes>
-        <Footer />
+
+      <Footer />
       </BrowserRouter>
     </div>
   );

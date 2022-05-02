@@ -23,15 +23,18 @@
 
 .header-text {
     margin-bottom: 0;
+    text-align: left;
 }
 
 .text-under-header {
     margin-bottom: 0;
+    text-align: left;
 }
 
 .year-text {
     font-size: 0.9em;
     font-family: monospace;
+    text-align: left;
 }
 
 .icons {

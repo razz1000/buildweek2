@@ -1,0 +1,20 @@
+img {
+  height: '50px';
+  width: '50px';
+  border-radius: '50%';
+  object-fit: cover;
+}
+.name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.number {
+  font-size: 14px;
+}
+.occupation {
+  font-size: 12px;
+}
+.dash {
+  margin-left: 4px;
+  margin-right: 4px;
+}

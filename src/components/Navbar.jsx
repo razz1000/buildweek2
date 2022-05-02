@@ -1,6 +1,6 @@
-import React from 'react-bootstrap'
-import { Navbar, Nav, Form, FormControl } from 'react-bootstrap'
-import '../stylesheets/navBar-stylesheet.css'
+import React from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import "../stylesheets/navBar-stylesheet.css";
 
 let NavBar = () => {
   return (
@@ -70,7 +70,7 @@ let NavBar = () => {
         </Navbar.Collapse>
       </div>
     </Navbar>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

@@ -1,8 +1,10 @@
 import SideBar from "./SideBar";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProfileJumbotron from "./Profile-Jumbotron";
+import ProfileJumbotron from "./ProfileJumbotron";
 import { useEffect, useState } from "react";
+import SidebarTop from "./SidebarTop";
+import SidebarExtraSection from "./SidebarExtraSection";
 
 const ProfilePage = () => {
   const [allProfiles, setAllProfiles] = useState([]);

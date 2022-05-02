@@ -15,11 +15,13 @@
 .nav-icon-outer {
     margin-bottom: -15px;
     cursor: pointere;
+    text-align: center;
 }
 
 .icons-and-texts-together {
     padding-left: 20px;
     cursor: pointer;   
+    text-align: center;
 }
 
 .nav-icon {
@@ -34,12 +36,12 @@
 
 .text-under-icon {
     font-size: 0.8em;
-    
 } 
 
 .the-work-icon {
     border-left: solid black 1px;
     padding-left: 10px;
+    text-align: center;
 }
 
 .the-me-icon {

@@ -1,5 +1,5 @@
-import { Container, Row, Col, Button } from 'react-bootstrap'
-import './stylesheets/singlePerson.css'
+import { Container, Row, Col, Button } from "react-bootstrap";
+import "./stylesheets/singlePerson.css";
 
 const SinglePerson = (props) => {
   return (
@@ -7,7 +7,7 @@ const SinglePerson = (props) => {
       <Row>
         <Col md={3}>
           <img
-            style={{ height: '50px', width: '50px', borderRadius: '50%' }}
+            style={{ height: "50px", width: "50px", borderRadius: "50%" }}
             src={props.profile.image}
             alt="profilePic"
           />
@@ -16,20 +16,23 @@ const SinglePerson = (props) => {
           <Row>
             <span className="name">
               {props.profile.name} {props.profile.surname}
-            </span>{' '}
+            </span>{" "}
             <span className="dash">-</span> <span className="number">3rd</span>
           </Row>
           <Row>
             <p className="occupation">{props.profile.title}</p>
           </Row>
           <Row>
-            <Button variant="outline-secondary" className="rounded-pill">
+            <button
+              type="button"
+              className="btn gray-border-btn rounded-pill mx-2"
+            >
               Connect
-            </Button>{' '}
+            </button>
           </Row>
         </Col>
       </Row>
     </Container>
-  )
-}
-export default SinglePerson
+  );
+};
+export default SinglePerson;

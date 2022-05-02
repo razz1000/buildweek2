@@ -12,20 +12,23 @@
 }
 
 .blue-border-btn {
-  border: 2px solid rgb(10, 102, 194) !important;
+  /* border: 2px solid rgb(10, 102, 194) !important; */
+  outline: 1px solid rgb(10, 102, 194);
   font-weight: 600 !important;
   color: rgb(10, 102, 194) !important;
 }
 .blue-border-btn:hover {
-  outline: 1px solid rgb(10, 102, 194);
+  outline: 2px solid rgb(10, 102, 194);
+  background-color: rgb(218, 237, 255) !important;
 }
 .gray-border-btn {
-  border: 2px solid rgb(164, 164, 164) !important;
+  outline: 1px solid rgb(164, 164, 164);
   font-weight: 600 !important;
   color: rgb(164, 164, 164) !important;
 }
 .gray-border-btn:hover {
-  outline: 1px solid rgb(164, 164, 164);
+  outline: 2px solid rgb(164, 164, 164);
+  background-color: rgb(239, 239, 239) !important;
 }
 .links {
   color: rgb(10, 102, 194);

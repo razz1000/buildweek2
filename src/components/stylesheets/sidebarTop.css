@@ -18,3 +18,9 @@
 .bottom-text {
   margin-bottom: 10px;
 }
+.side-top-hover:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

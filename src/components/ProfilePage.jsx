@@ -1,11 +1,10 @@
-import SideBar from "./SideBar";
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProfileJumbotron from "./Profile-Jumbotron";
-import { useEffect, useState } from "react";
-
-import ProfileJumbotron from "./ProfileJumbotron";
-
+import SideBar from './SideBar'
+import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import ProfileJumbotron from './Profile-Jumbotron'
+import { useEffect, useState } from 'react'
+import SidebarTop from './SidebarTop'
+import SidebarExtraSection from './SidebarExtraSection'
 const ProfilePage = () => {
   const [allProfiles, setAllProfiles] = useState([]);
 
@@ -37,7 +36,16 @@ const ProfilePage = () => {
           <ProfileJumbotron />
         </Col>
         <Col md={4}>
-          <SideBar data={allProfiles} heading="People also viewed" />
+          <SidebarTop />
+          <SideBar
+            data={allProfiles.slice(0, 5)}
+            heading="People also viewed"
+          />
+          <SideBar
+            data={allProfiles.slice(6, 11)}
+            heading="People you may know"
+          />
+          <SidebarExtraSection />
         </Col>
       </Row>
     </Container>

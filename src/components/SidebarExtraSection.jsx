@@ -12,7 +12,7 @@ const SidebarExtraSection = () => {
               interview questions
             </span>
           </Row>
-          <Row className="mb-4 mt-3">
+          <Row className="mb-4 mt-3 border-row">
             <Col md={2}>
               <img
                 style={{ height: '50px', width: '50px' }}
@@ -27,7 +27,7 @@ const SidebarExtraSection = () => {
               <hr />
             </Col>
           </Row>
-          <Row className="mb-4">
+          <Row className="mb-4 border-row">
             <Col md={2}>
               <img
                 style={{ height: '50px', width: '50px' }}
@@ -55,9 +55,9 @@ const SidebarExtraSection = () => {
               </span>
             </Col>
           </Row>
-          <Row>
+          <Row className="see-all-questions-row">
             <Col className="d-flex align-items-center justify-content-center mt-4 mb-2">
-              <span>See all quesitons</span>
+              <span className="see-all-questions-text">See all quesitons</span>
             </Col>
           </Row>
         </Col>

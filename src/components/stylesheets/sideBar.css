@@ -14,7 +14,7 @@
 }
 .see-more-row:hover {
   cursor: pointer;
-  background-color: gray;
+  background-color: aliceblue;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }

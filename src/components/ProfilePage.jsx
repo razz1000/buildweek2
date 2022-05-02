@@ -1,18 +1,18 @@
 import React from "react";
-import {Container, Row, Col} from "react-bootstrap"
-
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileJumbotron from "./Profile-Jumbotron";
 
 const ProfilePage = () => {
-    return(
-        <Container>
-            <Row>
-                <Col md={8}></Col>
-                <Col md={4}></Col>
-            </Row>
+  return (
+    <Container>
+      <Row>
+        <Col md={8}>
+          <ProfileJumbotron />
+        </Col>
+        <Col md={4}></Col>
+      </Row>
+    </Container>
+  );
+};
 
-        </Container>
-
-    )
-}
-
-export default ProfilePage
+export default ProfilePage;

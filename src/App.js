@@ -1,19 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./stylesheets/navBar-stylesheet.css";
-
-import ProfilePage from "./components/ProfilePage";
+import "./stylesheets/profile-jumbotron.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
         <Routes>
-          <Route path={"/profilepage"} element={<ProfilePage />} />
+          <Route path={"/profile-page"} element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,8 +4,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProfileJumbotron from "./Profile-Jumbotron";
 import { useEffect, useState } from "react";
 
-import ProfileJumbotron from "./ProfileJumbotron";
-
 const ProfilePage = () => {
   const [allProfiles, setAllProfiles] = useState([]);
 

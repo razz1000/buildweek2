@@ -1,10 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
 
-body {
-    background-color: blue;
 
-}
 
 .navbar-outer {
     display: flex;
@@ -22,12 +19,8 @@ body {
 
 .icons-and-texts-together {
     padding-left: 20px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
-
-
-
 
 .nav-icon {
     font-size: 1.5em;

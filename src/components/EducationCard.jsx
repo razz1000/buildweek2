@@ -7,22 +7,22 @@ let EducationCard = () => {
        <div>
        <div className="outer-container-top">
         <div>
-                <h2>Education</h2>
+                <h3>Education</h3>
         </div>
         <div>
-                <i className="bi bi-plus-lg"></i>
-                <i className="bi bi-pencil"></i>
+                <i className="bi bi-plus-lg icons plus-icon"></i>
+                <i className="bi bi-pencil icons edit-icon"></i>
         </div>
         </div>
             <div className="outer-lower-container">
                 <div>
-
-                <i class="bi bi-square"></i>
+                <img src="https://www.pngkey.com/png/full/240-2401662_cbs-logo-vertical-notext-blue-rgb-copenhagen-business.png" className="education-logo" alt="CBS" />
+                
                 </div>
-                <div>
-                <h4>Copenhagen Business School</h4>
-                <p>Master, Management of Innovation & Business Developemnt</p>
-                <p>2020 - 2022</p>
+                <div className="text-next-to-logo">
+                <h5 className="header-text">Copenhagen Business School</h5>
+                <p className="text-under-header">Master, Management of Innovation & Business Developemnt</p>
+                <p className="year-text">2020 - 2022</p>
             </div>
             
             </div>

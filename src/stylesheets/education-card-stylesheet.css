@@ -6,3 +6,38 @@
     align-items: baseline;
     justify-content: space-between;
 }
+
+.outer-lower-container {
+    display: flex;
+}
+
+
+.education-logo {
+    width: 35px;
+    object-fit: cover;
+}
+
+.text-next-to-logo { 
+    margin-left: 20px;
+}
+
+.header-text {
+    margin-bottom: 0;
+}
+
+.text-under-header {
+    margin-bottom: 0;
+}
+
+.year-text {
+    font-size: 0.9em;
+    font-family: monospace;
+}
+
+.icons {
+    font-size: 1.3em;
+}
+
+.plus-icon {
+    padding-right: 40px;
+}

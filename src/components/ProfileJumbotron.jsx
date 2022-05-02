@@ -1,8 +1,12 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
-import DescriptionProfile from "./DescriptionProfile";
 
-const ProfileJumbotron = ({ profileData }) => {
+import DescriptionProfile from "./DescriptionProfile";
+import ProfileModal from "./ProfileModal";
+import { useState } from "react";
+import { Row } from "react-bootstrap";
+
+const ProfileJumbotron = ({ profiledata, editprofiledata }) => {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className="profile-jumbotron ">
       <Row>
@@ -12,20 +16,24 @@ const ProfileJumbotron = ({ profileData }) => {
           alt=""
         />
 
+        <i className="fa-solid fa-pencil mr-4 mt-4 edit-cover-btn"></i>
+      </Row>
+      <Row>
+        <img className="profile-img" src={profiledata.image} alt="" />
         <i
-          className="fa-solid fa-pencil mr-4 mt-4 edit-cover-btn"
-          style={{ color: "white" }}
+          className="fa-solid fa-pencil mr-4 mt-4 edit-info-btn"
+          onClick={() => setModalShow(true)}
         ></i>
       </Row>
       <Row>
-        <img className="profile-img" src={profileData.image} alt="" />
-        <i
-          className="fa-solid fa-pencil mr-4 mt-4 edit-cover-btn"
-          style={{ color: "black" }}
-        ></i>
-      </Row>
-      <Row>
-        <DescriptionProfile profileData={profileData} />
+        <ProfileModal
+          profiledata={profiledata}
+          editprofiledata={editprofiledata}
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
+
+        <DescriptionProfile profiledata={profiledata} />
       </Row>
     </div>
   );

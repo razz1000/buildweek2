@@ -1,18 +1,17 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
-
-const DescriptionProfile = ({ profileData }) => {
+import { Row, Col, Button } from "react-bootstrap";
+const DescriptionProfile = ({ profiledata }) => {
   return (
     <div>
       <Row className="description-section">
         <Col md={8}>
           <div className="bio-text">
-            <h3>{profileData.name + profileData.surname} </h3>
-            <p>{profileData.bio}</p>
+            <h3>{profiledata.name + profiledata.surname} </h3>
+            <p>{profiledata.bio}</p>
           </div>
           <div>
             <p style={{ textAlign: "start", marginLeft: "2rem" }}>
-              {profileData.area}
+              {profiledata.area}
               <a href="#" className="links " style={{ marginLeft: "0.5rem" }}>
                 Contact Info
               </a>
@@ -25,7 +24,7 @@ const DescriptionProfile = ({ profileData }) => {
               </a>
             </p>
           </div>
-          <div className="d-flex ml-4">
+          <div className="d-flex ml-4 mb-2">
             <button
               type="button"
               class="btn full-blue-btn text-white rounded-pill ml-1"

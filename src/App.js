@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ProfilePage from './components/ProfilePage'
 import NavBar from './components/NavBar'
+import EducationCard from "./components/EducationCard"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path={'/profile-page'} element={<ProfilePage />} />
         </Routes>
+
       <Footer />
       </BrowserRouter>
     </div>

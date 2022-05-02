@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./stylesheets/navBar-stylesheet.css"
+import Footer from "./components/Footer"
+
 
 import ProfilePage from "./components/ProfilePage"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path={"/profilepage"} element={<ProfilePage />} />
       </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );

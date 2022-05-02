@@ -1,3 +1,33 @@
 .App {
   text-align: center;
 }
+
+.full-blue-btn {
+  background-color: rgb(10, 102, 194) !important;
+  font-weight: 600 !important;
+}
+.full-blue-btn:hover {
+  background-color: rgb(8, 83, 157) !important;
+  font-weight: 600 !important;
+}
+
+.blue-border-btn {
+  border: 2px solid rgb(10, 102, 194) !important;
+  font-weight: 600 !important;
+  color: rgb(10, 102, 194) !important;
+}
+.blue-border-btn:hover {
+  outline: 1px solid rgb(10, 102, 194);
+}
+.gray-border-btn {
+  border: 2px solid rgb(164, 164, 164) !important;
+  font-weight: 600 !important;
+  color: rgb(164, 164, 164) !important;
+}
+.gray-border-btn:hover {
+  outline: 1px solid rgb(164, 164, 164);
+}
+.links {
+  color: rgb(10, 102, 194);
+  font-weight: 500;
+}

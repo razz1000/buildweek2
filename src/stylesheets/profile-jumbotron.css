@@ -1,10 +1,11 @@
 .profile-jumbotron {
-  border: 5px solid salmon;
+  background-color: white;
 }
 .profile-cover {
   height: 10rem;
   width: 100%;
   object-fit: cover;
+  margin: 1rem;
 }
 
 .edit-cover-btn {
@@ -18,6 +19,11 @@
   height: 10rem;
   object-fit: cover;
   margin-left: 3rem;
-  margin-top: -4rem;
+  margin-top: -5rem;
   border: 4px solid white;
+}
+
+.bio-text {
+  text-align: start;
+  margin-left: 2rem;
 }

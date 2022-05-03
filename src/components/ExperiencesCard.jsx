@@ -1,36 +1,40 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 const options = {
   headers: {
     Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE1Nzc5MTAsImV4cCI6MTY1Mjc4NzUxMH0.dsdmzZvDcP2azLGh2MGVZ8-C7UCxWzuy8sAPtKFDYg4'
-  }
-}
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE1Nzc5MTAsImV4cCI6MTY1Mjc4NzUxMH0.dsdmzZvDcP2azLGh2MGVZ8-C7UCxWzuy8sAPtKFDYg4",
+  },
+};
 
 const ExperiencesCard = (props) => {
   //   const [profileId, setProfileId] = useState('')
 
-  const fetchNewId = async () => {
+  const fetchNewId = async (id) => {
     try {
       const response = await fetch(
-        'https://striveschool-api.herokuapp.com/api/profile/' +
-          props.profileId +
-          '/experiences',
-        options
-      )
+        `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE1Nzc5MTAsImV4cCI6MTY1Mjc4NzUxMH0.dsdmzZvDcP2azLGh2MGVZ8-C7UCxWzuy8sAPtKFDYg4",
+          },
+        }
+      );
       if (response.ok) {
-        const data = await response.json()
-        console.log(data)
+        const data = await response.json();
+        console.log(data);
       }
     } catch (error) {
-      console.log('error', error)
+      console.log("error", error);
     }
-  }
+  };
   useEffect(() => {
-    fetchNewId()
+    console.log("props prof: ", props.profileId);
+    fetchNewId(props.profileId);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [props.profileId]);
 
   return (
     <div>
@@ -60,6 +64,6 @@ const ExperiencesCard = (props) => {
         </div>
       </div>
     </div>
-  )
-}
-export default ExperiencesCard
+  );
+};
+export default ExperiencesCard;

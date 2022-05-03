@@ -10,6 +10,7 @@
 .outer-lower-container {
   display: flex;
   border-bottom: 1px solid rgb(229, 229, 229);
+  justify-content: space-between;
 }
 
 .education-logo {

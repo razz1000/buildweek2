@@ -27,7 +27,6 @@ let EducationCard = () => {
             Master, Management of Innovation & Business Developemnt
           </p>
           <p className="year-text">2020 - 2022</p>
-          <div className="hr"></div>
         </div>
       </div>
     </div>

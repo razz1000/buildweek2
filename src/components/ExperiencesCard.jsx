@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+import "../stylesheets/experiencesCard-stylesheet.css"
+import ExperiencesUser from "./ExperiencesUser"
 
 const options = {
   headers: {
@@ -8,7 +10,7 @@ const options = {
 };
 
 const ExperiencesCard = (props) => {
-  //   const [profileId, setProfileId] = useState('')
+  const [user, setUser] = useState([])
 
   const fetchNewId = async (id) => {
     try {
@@ -23,7 +25,12 @@ const ExperiencesCard = (props) => {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        console.log("this is the data : " + data)
+        
+        setUser(data)
+        
+
+
       }
     } catch (error) {
       console.log("error", error);
@@ -39,7 +46,10 @@ const ExperiencesCard = (props) => {
   }, [props.profileId]);
 
   return (
-    <div>
+    
+        
+    
+      <div>
       <div className="outer-container-top">
         <div>
           <h3>Experiences</h3>
@@ -49,23 +59,17 @@ const ExperiencesCard = (props) => {
           <i className="bi bi-pencil icons edit-icon"></i>
         </div>
       </div>
-      <div className="outer-lower-container">
-        <div>
-          <img
-            src="https://www.pngkey.com/png/full/240-2401662_cbs-logo-vertical-notext-blue-rgb-copenhagen-business.png"
-            className="education-logo"
-            alt="CBS"
-          />
-        </div>
-        <div className="text-next-to-logo">
-          <h5 className="header-text">hello</h5>
-          <p className="text-under-header">
-            Master, Management of Innovation & Business Developemnt
-          </p>
-          <p className="year-text">2020 - 2022</p>
-        </div>
-      </div>
-    </div>
-  );
+
+
+    <ExperiencesUser u={user}/>
+    
+  </div>
+  
+  
+  )  
+
+
+
+  
 };
 export default ExperiencesCard;

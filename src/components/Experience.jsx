@@ -1,0 +1,56 @@
+import React from "react";
+import ProfileModal from "./ProfileModal";
+import { useState, useEffect } from "react";
+import AddExperience from "./AddExperience";
+
+const Experience = ({ user }) => {
+  const [modalShow, setModalShow] = useState(false);
+  const [content, setContent] = useState();
+
+  return (
+    <div className="outer-lower-container m-3">
+      <div>
+        <img
+          src="https://www.pngkey.com/png/full/240-2401662_cbs-logo-vertical-notext-blue-rgb-copenhagen-business.png"
+          className="education-logo"
+          alt="CBS"
+        />
+      </div>
+      <div className="text-next-to-logo">
+        <div>
+          <h5 className="header-text">{user.role}</h5>
+        </div>
+        <p className="text-under-header">{user.company}</p>
+        <p className="year-text">
+          {user.startDate} - {user.endDate}
+        </p>
+
+        <p className="year-text">{user.area}</p>
+      </div>
+      <div>
+        <i
+          className="bi bi-plus-lg  plus-icon m-2"
+          onClick={() => {
+            setModalShow(true);
+            setContent(() => <h1>{"I am plus"}</h1>);
+          }}
+        ></i>
+
+        <i
+          className="bi bi-pencil  plus-icon m-2"
+          onClick={() => {
+            setModalShow(true);
+            setContent(() => <AddExperience userexp={user} />);
+          }}
+        ></i>
+      </div>
+      <ProfileModal
+        show={modalShow}
+        content={content}
+        onHide={() => setModalShow(false)}
+      />
+    </div>
+  );
+};
+
+export default Experience;

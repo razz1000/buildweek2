@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
 import "../stylesheets/experiencesCard-stylesheet.css";
-import ExperiencesUser from "./ExperiencesUser";
-import ProfileModal from "./ProfileModal";
-
-const options = {
-  headers: {
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE1Nzc5MTAsImV4cCI6MTY1Mjc4NzUxMH0.dsdmzZvDcP2azLGh2MGVZ8-C7UCxWzuy8sAPtKFDYg4",
-  },
-};
+import Experience from "./Experience";
 
 const ExperiencesCard = (props) => {
   const [user, setUser] = useState([]);
-  const [modalShow, setModalShow] = useState(false);
-  const [content, setContent] = useState();
 
   const fetchNewId = async (id) => {
     try {
@@ -51,31 +41,11 @@ const ExperiencesCard = (props) => {
         <div>
           <h3>Experiences</h3>
         </div>
-        <div>
-          <i
-            className="bi bi-plus-lg  plus-icon m-2"
-            onClick={() => {
-              setModalShow(true);
-              setContent(() => <h1>{"I am plus"}</h1>);
-            }}
-          ></i>
-
-          <i
-            className="bi bi-pencil  plus-icon m-2"
-            onClick={() => {
-              setModalShow(true);
-              setContent(() => <h1>{"I am pen"}</h1>);
-            }}
-          ></i>
-        </div>
       </div>
-      <ExperiencesUser u={user} />
-      <ProfileModal show={modalShow} onHide={() => setModalShow(false)} />
-      <ProfileModal
-        show={modalShow}
-        content={content}
-        onHide={() => setModalShow(false)}
-      />
+      {user.map((exp) => (
+        <Experience user={exp} />
+      ))}
+      {/* <ExperiencesUser users={user} /> */}
     </div>
   );
 };

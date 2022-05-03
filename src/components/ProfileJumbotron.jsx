@@ -4,9 +4,11 @@ import DescriptionProfile from "./DescriptionProfile";
 import ProfileModal from "./ProfileModal";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
   const [modalShow, setModalShow] = useState(false);
+  const params = useParams();
   return (
     <div className="profile-jumbotron ">
       <Row>
@@ -16,7 +18,9 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
           alt=""
         />
         <div
-          className="edit-cover-btn d-flex justify-content-center align-items-center"
+          className={`edit-cover-btn ${
+            params.userId !== "me" ? "d-none" : "d-flex"
+          } justify-content-center align-items-center `}
           style={{ right: "2rem", top: "1rem" }}
         >
           <i
@@ -28,7 +32,9 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
       <Row>
         <img className="profile-img" src={profiledata.image} alt="" />
         <div
-          className="edit-info-btn d-flex justify-content-center align-items-center"
+          className={`edit-info-btn ${
+            params.userId !== "me" ? "d-none" : "d-flex"
+          }  justify-content-center align-items-center`}
           style={{ top: "11rem", right: "2rem" }}
         >
           <i

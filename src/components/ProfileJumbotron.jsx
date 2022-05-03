@@ -15,15 +15,28 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
           src="https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
           alt=""
         />
-
-        <i className="fa-solid fa-pencil mr-4 mt-4 edit-cover-btn"></i>
+        <div
+          className="edit-cover-btn d-flex justify-content-center align-items-center"
+          style={{ right: "2rem", top: "1rem" }}
+        >
+          <i
+            className="fa-solid fa-pencil mr-4 mt-4  "
+            style={{ position: "absolute", bottom: "0.5rem", left: "9px" }}
+          ></i>
+        </div>
       </Row>
       <Row>
         <img className="profile-img" src={profiledata.image} alt="" />
-        <i
-          className="fa-solid fa-pencil mr-4 mt-4 edit-info-btn"
-          onClick={() => setModalShow(true)}
-        ></i>
+        <div
+          className="edit-info-btn d-flex justify-content-center align-items-center"
+          style={{ top: "11rem", right: "2rem" }}
+        >
+          <i
+            className="fa-solid fa-pencil mr-4 mt-4 "
+            style={{ position: "absolute", bottom: "0.5rem", left: "9px" }}
+            onClick={() => setModalShow(true)}
+          ></i>
+        </div>
       </Row>
       <Row>
         <ProfileModal

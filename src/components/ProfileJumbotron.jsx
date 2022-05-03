@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import EditJumbotronForm from "./EditJumbotronForm";
 
 const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
   const [modalShow, setModalShow] = useState(false);
@@ -43,9 +44,14 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
       </Row>
       <Row>
         <ProfileModal
+          content={
+            <EditJumbotronForm
+              profiledata={profiledata}
+              editprofiledata={editprofiledata}
+            />
+          }
           putprofiledata={putprofiledata}
           profiledata={profiledata}
-          editprofiledata={editprofiledata}
           show={modalShow}
           onHide={() => setModalShow(false)}
         />

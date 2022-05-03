@@ -5,11 +5,6 @@ import { useEffect } from "react";
 import EditJumbotronForm from "./EditJumbotronForm";
 
 const ProfileModal = (props) => {
-  const [newData, setNewData] = useState(props.profiledata);
-
-  console.log("newData: ", newData);
-  console.log("props: ", props.profiledata);
-  useEffect(() => setNewData(props.profiledata), []);
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
@@ -18,12 +13,7 @@ const ProfileModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
-        <Container>
-          <EditJumbotronForm
-            profiledata={props.profiledata}
-            editprofiledata={props.editprofiledata}
-          />
-        </Container>
+        <Container>{props.content}</Container>
       </Modal.Body>
       <Modal.Footer>
         <Button

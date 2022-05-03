@@ -6,7 +6,7 @@ const ProfileModal = (props) => {
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Edit your personal informations
+          {props.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">

@@ -6,6 +6,7 @@ import AddExperience from "./AddExperience";
 const Experience = ({ user, edituserdata, getaction }) => {
   const [modalShow, setModalShow] = useState(false);
   const [content, setContent] = useState();
+  const [title, setTitle] = useState();
 
   return (
     <div className="row d-flex justify-content-between">
@@ -32,6 +33,7 @@ const Experience = ({ user, edituserdata, getaction }) => {
           className="bi bi-plus-lg  plus-icon m-2"
           onClick={() => {
             getaction("add");
+            setTitle("Add experience");
             setModalShow(true);
             setContent(() => (
               <AddExperience user={user} edituserdata={edituserdata} />
@@ -42,6 +44,7 @@ const Experience = ({ user, edituserdata, getaction }) => {
         <i
           className="bi bi-pencil  plus-icon m-2"
           onClick={() => {
+            setTitle("Edit experience");
             getaction("edit");
             setModalShow(true);
             setContent(() => (
@@ -53,6 +56,7 @@ const Experience = ({ user, edituserdata, getaction }) => {
       <ProfileModal
         show={modalShow}
         content={content}
+        title={title}
         onHide={() => setModalShow(false)}
       />
     </div>

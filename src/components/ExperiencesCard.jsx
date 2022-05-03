@@ -31,7 +31,9 @@ const ExperiencesCard = (props) => {
   };
   useEffect(() => {
     console.log("props prof: ", props.profileId);
-    fetchNewId(props.profileId);
+    if (props.profileId) {
+      fetchNewId(props.profileId);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.profileId]);

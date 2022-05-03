@@ -1,8 +1,5 @@
 import React from "react";
-import { Modal, Container, Button, Form } from "react-bootstrap";
-import { useState } from "react";
-import { useEffect } from "react";
-import EditJumbotronForm from "./EditJumbotronForm";
+import { Modal, Container, Button } from "react-bootstrap";
 
 const ProfileModal = (props) => {
   return (

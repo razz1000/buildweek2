@@ -4,8 +4,6 @@ import DescriptionProfile from "./DescriptionProfile";
 import ProfileModal from "./ProfileModal";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import EditJumbotronForm from "./EditJumbotronForm";
 
 const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {

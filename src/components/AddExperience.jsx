@@ -2,11 +2,19 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const AddExperience = (props) => {
-  const [userExperience, setUserExperience] = useState(props.userexp);
+const AddExperience = ({ user, edituserdata }) => {
+  const [userExperience, setUserExperience] = useState(user);
 
-  //   useEffect(() => setNewData(props.profiledata), []);
-
+  useEffect(() => setUserExperience(user), []);
+  //   console.log(userExperience);
+  let change = (e, field) => {
+    setUserExperience({
+      ...userExperience,
+      [field]: e.target.value,
+    });
+  };
+  console.log("User Experience: ", userExperience);
+  useEffect(() => edituserdata(userExperience), [userExperience]);
   return (
     <Form>
       <Form.Group>
@@ -15,43 +23,43 @@ const AddExperience = (props) => {
           value={userExperience.role}
           type="text"
           placeholder="Role"
-          onChange={(e) => console.log(e.target.value)}
-          //   onChange={(e) => props.editprofiledata(e, "role")}
+          onChange={(e) => change(e, "role")}
         />
         <br />
         <Form.Control
           value={userExperience.company}
           type="text"
-          placeholder="Last name"
-          //   onChange={(e) => props.editprofiledata(e, "company")}
+          placeholder="Company"
+          onChange={(e) => change(e, "company")}
         />
         <br />
         <Form.Control
           value={userExperience.startDate}
           type="date"
           placeholder="Start date"
-          //   onChange={(e) => props.editprofiledata(e, "startDate")}
+          onChange={(e) => change(e, "startDate")}
         />
         <br />
         <Form.Control
           value={userExperience.endDate}
           type="date"
           placeholder="End date"
-          //   onChange={(e) => props.editprofiledata(e, "endDate")}
+          onChange={(e) => change(e, "endDate")}
         />
         <br />
         <Form.Group
           value={userExperience.description}
           controlId="exampleForm.ControlTextarea1"
-          //   onChange={(e) => props.editprofiledata(e, "description")}
+          onChange={(e) => change(e, "description")}
         >
           <Form.Control as="textarea" rows={3} placeholder="Description" />
         </Form.Group>
-
+        <br />
         <Form.Control
           value={userExperience.area}
           type="text"
           placeholder="Location"
+          onChange={(e) => change(e, "area")}
         />
         <br />
       </Form.Group>

@@ -4,6 +4,15 @@ import Experience from "./Experience";
 
 const ExperiencesCard = (props) => {
   const [user, setUser] = useState([]);
+  console.log("main state:", user);
+  const editUsersData = (obj) => {
+    let foundObj = user.users.filter((exp) => exp._id !== obj._id);
+    console.log("UnPushed: ", foundObj);
+    foundObj.push(obj);
+    console.log("Pushed: ", foundObj);
+    setUser({ users: foundObj });
+  };
+  console.log("state: ", user);
 
   const fetchNewId = async (id) => {
     try {
@@ -18,9 +27,9 @@ const ExperiencesCard = (props) => {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log("this is the data : " + data);
 
-        setUser(data);
+        setUser({ users: data });
+        console.log("Fetched data: ", data);
       }
     } catch (error) {
       console.log("error", error);
@@ -42,9 +51,11 @@ const ExperiencesCard = (props) => {
           <h3>Experiences</h3>
         </div>
       </div>
-      {user.map((exp) => (
-        <Experience user={exp} />
-      ))}
+      {/* I have mapped through users and I passed one obj to the Experience comp to dinamicaly update the data */}
+      {user.users &&
+        user.users.map((exp) => (
+          <Experience key={exp._id} user={exp} edituserdata={editUsersData} />
+        ))}
       {/* <ExperiencesUser users={user} /> */}
     </div>
   );

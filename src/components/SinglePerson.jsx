@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./stylesheets/singlePerson.css";
 
 const SinglePerson = (props) => {
@@ -14,10 +15,13 @@ const SinglePerson = (props) => {
         </Col>
         <Col md={9}>
           <Row>
-            <span className="name">
-              {props.profile.name} {props.profile.surname}
-            </span>{" "}
-            <span className="dash">-</span> <span className="number">3rd</span>
+            <Link to={`/profile-page/${props.profile._id}`}>
+              <span className="name">
+                {props.profile.name} {props.profile.surname}
+              </span>
+              <span className="dash">-</span>
+              <span className="number">3rd</span>
+            </Link>
           </Row>
           <Row>
             <p className="occupation">{props.profile.title}</p>

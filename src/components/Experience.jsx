@@ -3,7 +3,7 @@ import ProfileModal from "./ProfileModal";
 import { useState, useEffect } from "react";
 import AddExperience from "./AddExperience";
 
-const Experience = ({ user, edituserdata }) => {
+const Experience = ({ user, edituserdata, getaction }) => {
   const [modalShow, setModalShow] = useState(false);
   const [content, setContent] = useState();
 
@@ -31,14 +31,18 @@ const Experience = ({ user, edituserdata }) => {
         <i
           className="bi bi-plus-lg  plus-icon m-2"
           onClick={() => {
+            getaction("add");
             setModalShow(true);
-            setContent(() => <h1>{"I am plus"}</h1>);
+            setContent(() => (
+              <AddExperience user={user} edituserdata={edituserdata} />
+            ));
           }}
         ></i>
 
         <i
           className="bi bi-pencil  plus-icon m-2"
           onClick={() => {
+            getaction("edit");
             setModalShow(true);
             setContent(() => (
               <AddExperience user={user} edituserdata={edituserdata} />

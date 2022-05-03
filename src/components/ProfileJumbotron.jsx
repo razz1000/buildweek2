@@ -19,7 +19,7 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
         />
         <div
           className={`edit-cover-btn ${
-            params.userId !== "me" ? "d-none" : "d-flex"
+            params.userId !== "me" ? "d-flex" : "d-none"
           } justify-content-center align-items-center `}
           style={{ right: "2rem", top: "1rem" }}
         >
@@ -33,7 +33,7 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
         <img className="profile-img" src={profiledata.image} alt="" />
         <div
           className={`edit-info-btn ${
-            params.userId !== "me" ? "d-none" : "d-flex"
+            params.userId !== "me" ? "d-flex" : "d-none"
           }  justify-content-center align-items-center`}
           style={{ top: "11rem", right: "2rem" }}
         >

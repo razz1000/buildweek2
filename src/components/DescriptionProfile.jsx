@@ -5,7 +5,7 @@ const DescriptionProfile = ({ profiledata }) => {
   return (
     <div>
       <Row className="description-section">
-        <Col md={8}>
+        <Col md={9}>
           <div className="bio-text">
             <h3>{profiledata.name + " " + profiledata.surname} </h3>
             <p>{profiledata.bio}</p>

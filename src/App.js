@@ -17,6 +17,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path={"/profile-page"} element={<ProfilePage />} />
+          <Route path={"/profile-page/:userId"} element={<ProfilePage />} />
         </Routes>
 
         <Footer />

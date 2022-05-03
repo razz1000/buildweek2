@@ -1,0 +1,28 @@
+.question-mark {
+  margin-left: auto;
+}
+.sidebar-top-text {
+  display: inline-block;
+  font-weight: 500;
+  color: rgb(102, 102, 102);
+}
+.sidebar-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid rgb(224, 223, 220);
+  border-width: 0.1px;
+  border-radius: 15px;
+  background-color: white;
+}
+.top-text {
+  margin-top: 10px;
+}
+.bottom-text {
+  margin-bottom: 10px;
+}
+.side-top-hover:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

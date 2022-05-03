@@ -1,0 +1,33 @@
+.sidebar-extra-text {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.sidebar-main-row {
+  background-color: white;
+  color: rgb(25, 25, 25);
+  border: solid rgb(224, 223, 220);
+  border-width: 0.1px;
+  border-radius: 15px;
+  margin-top: 10px;
+  /* padding: 5px; */
+}
+.border-row {
+  border-bottom: dotted gray;
+  padding-bottom: 10px;
+  border-width: 0.1px;
+}
+.see-all-questions-row {
+  border-top: dotted gray;
+  margin-top: 10px;
+  border-width: 0.1px;
+}
+.see-all-questions-text {
+  margin-top: -10px;
+}
+.see-all-questions-row:hover {
+  background-color: aliceblue;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

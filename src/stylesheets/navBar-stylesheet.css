@@ -1,0 +1,54 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+
+
+
+.navbar-outer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-icon-and-search {
+    display: flex;
+}
+
+.nav-icon-outer {
+    margin-bottom: -15px;
+    cursor: pointere;
+    text-align: center;
+}
+
+.icons-and-texts-together {
+    padding-left: 20px;
+    cursor: pointer;   
+    text-align: center;
+}
+
+.nav-icon {
+    font-size: 1.5em;
+    margin-bottom: -15px !important; 
+    color: grey;
+}
+
+.nav-icon:hover { 
+    color: black;
+}
+
+.text-under-icon {
+    font-size: 0.8em;
+} 
+
+.the-work-icon {
+    border-left: solid black 1px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.the-me-icon {
+    padding-right: 10px;
+}
+
+.linkedin-icon {
+    font-size: 2em;
+    color: #0072b1;
+}

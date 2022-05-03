@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProfilePage from "./components/ProfilePage";
+// import NavBar from "./components/NavBar";
+
+// import EducationCard from "./components/EducationCard"
+import "./App.css";
+
+import "./stylesheets/profile-jumbotron.css";
+import NavBar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path={"/profile-page"} element={<ProfilePage />} />
+          <Route path={"/profile-page/:userId"} element={<ProfilePage />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

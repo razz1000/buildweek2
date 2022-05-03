@@ -1,0 +1,57 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+.p-footer {
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.p-footer:hover {
+    text-decoration: underline;
+}
+
+.footer-listgroup {
+    text-align: left;
+}
+
+
+.icon-and-text-footer { 
+    display: flex;
+    text-align: left;
+}
+
+#dropdown-item-button { 
+    background-color: white;
+    color: black;
+}
+
+.dropdown-language-area {
+    text-align: left;
+}
+
+.linkedin-icon2 { 
+    display: flex;
+    font-size: 2em;
+    color: #0072b1;
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+}
+
+.text-next-to-icon {
+    padding-left: 10px;
+    margin-bottom: -2px;
+}
+
+.text-next-to-icon2 {
+    padding-left: 10px;
+    font-size: 0.6em;
+}
+
+.copyright-text {
+    display: flex;
+    color: grey;
+}
+
+.select-language-text {
+    font-size: 0.8em;
+}

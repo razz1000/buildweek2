@@ -2,37 +2,38 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.full-blue-btn {
+  background-color: rgb(10, 102, 194) !important;
+  font-weight: 600 !important;
+  max-height: 2.4rem;
+}
+.full-blue-btn:hover {
+  background-color: rgb(8, 83, 157) !important;
+  font-weight: 600 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.blue-border-btn {
+  /* border: 2px solid rgb(10, 102, 194) !important; */
+  outline: 1px solid rgb(10, 102, 194);
+  font-weight: 600 !important;
+  color: rgb(10, 102, 194) !important;
+  max-height: 2.4rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.blue-border-btn:hover {
+  outline: 2px solid rgb(10, 102, 194);
+  background-color: rgb(218, 237, 255) !important;
 }
-
-.App-link {
-  color: #61dafb;
+.gray-border-btn {
+  outline: 1px solid rgb(164, 164, 164);
+  font-weight: 600 !important;
+  color: rgb(164, 164, 164) !important;
+  max-height: 2.4rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gray-border-btn:hover {
+  outline: 2px solid rgb(164, 164, 164);
+  background-color: rgb(239, 239, 239) !important;
+}
+.links {
+  color: rgb(10, 102, 194);
+  font-weight: 500;
 }

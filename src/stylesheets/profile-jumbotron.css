@@ -1,5 +1,11 @@
 .profile-jumbotron {
   background-color: white;
+  border: solid rgb(224, 223, 220);
+  border-radius: 1px;
+  border-width: 0.1px;
+  margin-top: 8px;
+
+  color: rgb(102, 102, 102);
 }
 .profile-cover {
   height: 10rem;
@@ -31,6 +37,7 @@
   width: 2rem;
   border-radius: 50%;
 }
+
 .edit-info-btn:hover {
   cursor: pointer;
   height: 2rem;

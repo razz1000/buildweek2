@@ -1,93 +1,93 @@
-import SideBar from './SideBar'
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import ProfileJumbotron from './ProfileJumbotron'
-import { useEffect, useState } from 'react'
-import SidebarTop from './SidebarTop'
-import SidebarExtraSection from './SidebarExtraSection'
-import { useParams } from 'react-router-dom'
-import ExperiencesCard from './ExperiencesCard'
+import SideBar from "./SideBar";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import ProfileJumbotron from "./ProfileJumbotron";
+import { useEffect, useState } from "react";
+import SidebarTop from "./SidebarTop";
+import SidebarExtraSection from "./SidebarExtraSection";
+import { useParams } from "react-router-dom";
+import ExperiencesCard from "./ExperiencesCard";
 
 const ProfilePage = () => {
-  const [allProfiles, setAllProfiles] = useState([])
-  const [profileData, setProfileData] = useState([])
-  const [experiencesId, setExperiencesId] = useState('')
+  const [allProfiles, setAllProfiles] = useState([]);
+  const [profileData, setProfileData] = useState([]);
+  const [experiencesId, setExperiencesId] = useState("");
 
   const editProfileData = (e, field) => {
-    console.log(field)
+    console.log(field);
     setProfileData({
       ...profileData,
-      [field]: e.target.value
-    })
-  }
+      [field]: e.target.value,
+    });
+  };
 
   const putProfileData = async () => {
     try {
       const response = await fetch(
-        'https://striveschool-api.herokuapp.com/api/profile/',
+        "https://striveschool-api.herokuapp.com/api/profile/",
         {
-          method: 'PUT',
+          method: "PUT",
           body: JSON.stringify(profileData),
           headers: {
             authorization:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s',
-            'Content-type': 'application/json'
-          }
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+            "Content-type": "application/json",
+          },
         }
-      )
+      );
 
-      const data = await response.json()
+      const data = await response.json();
 
-      setProfileData(data)
-      console.log('✅Everything went well, infos were updated!', data)
+      setProfileData(data);
+      console.log("✅Everything went well, infos were updated!", data);
     } catch (error) {
-      console.log('❌ something went wrong: ', error)
+      console.log("❌ something went wrong: ", error);
     }
-  }
+  };
 
   const fetchAllProfiles = async () => {
     const response = await fetch(
-      'https://striveschool-api.herokuapp.com/api/profile/',
+      "https://striveschool-api.herokuapp.com/api/profile/",
       {
         headers: {
           authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE0OTM1NzcsImV4cCI6MTY1MjcwMzE3N30.9qnwR5Y-5lsD8GLJZNjp5T6Z__FJku-we3Sn6MwRpp0'
-        }
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmQxZGE5MDIzOTAwMTVkOTY1YzgiLCJpYXQiOjE2NTE0OTM1NzcsImV4cCI6MTY1MjcwMzE3N30.9qnwR5Y-5lsD8GLJZNjp5T6Z__FJku-we3Sn6MwRpp0",
+        },
       }
-    )
+    );
 
-    const data = await response.json()
+    const data = await response.json();
 
-    console.log(data.slice(0, 8))
-    setAllProfiles(data)
-  }
+    console.log(data.slice(0, 8));
+    setAllProfiles(data);
+  };
   const fetchProfileData = async (userId) => {
     const linkToFetch = `https://striveschool-api.herokuapp.com/api/profile/${
-      userId || 'me'
-    }`
+      userId || "me"
+    }`;
     const response = await fetch(linkToFetch, {
       headers: {
         authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s'
-      }
-    })
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+      },
+    });
 
-    const data = await response.json()
+    const data = await response.json();
 
-    setProfileData(data)
-    console.log(data)
-  }
-  let params = useParams()
+    setProfileData(data);
+    console.log(data);
+  };
+  let params = useParams();
   useEffect(() => {
     if (params) {
-      fetchProfileData(params.userId)
+      fetchProfileData(params.userId);
     } else {
-      fetchProfileData()
+      fetchProfileData();
     }
-  }, [])
+  }, []);
   useEffect(() => {
-    fetchAllProfiles()
-  }, [])
+    fetchAllProfiles();
+  }, []);
   return (
     <Container>
       <Row>
@@ -113,7 +113,7 @@ const ProfilePage = () => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

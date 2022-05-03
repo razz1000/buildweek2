@@ -1,6 +1,7 @@
-import { useEffect,useState } from "react";
-import "../stylesheets/experiencesCard-stylesheet.css"
-import ExperiencesUser from "./ExperiencesUser"
+import { useEffect, useState } from "react";
+import "../stylesheets/experiencesCard-stylesheet.css";
+import ExperiencesUser from "./ExperiencesUser";
+import ProfileModal from "./ProfileModal";
 
 const options = {
   headers: {
@@ -10,7 +11,9 @@ const options = {
 };
 
 const ExperiencesCard = (props) => {
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
+  const [content, setContent] = useState();
 
   const fetchNewId = async (id) => {
     try {
@@ -25,12 +28,9 @@ const ExperiencesCard = (props) => {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log("this is the data : " + data)
-        
-        setUser(data)
-        
+        console.log("this is the data : " + data);
 
-
+        setUser(data);
       }
     } catch (error) {
       console.log("error", error);
@@ -46,30 +46,37 @@ const ExperiencesCard = (props) => {
   }, [props.profileId]);
 
   return (
-    
-        
-    
-      <div>
-      <div className="outer-container-top">
+    <div className="sidebar-container ">
+      <div className="d-flex justify-content-between m-3">
         <div>
           <h3>Experiences</h3>
         </div>
         <div>
-          <i className="bi bi-plus-lg icons plus-icon"></i>
-          <i className="bi bi-pencil icons edit-icon"></i>
+          <i
+            className="bi bi-plus-lg  plus-icon m-2"
+            onClick={() => {
+              setModalShow(true);
+              setContent(() => <h1>{"I am plus"}</h1>);
+            }}
+          ></i>
+
+          <i
+            className="bi bi-pencil  plus-icon m-2"
+            onClick={() => {
+              setModalShow(true);
+              setContent(() => <h1>{"I am pen"}</h1>);
+            }}
+          ></i>
         </div>
       </div>
-
-
-    <ExperiencesUser u={user}/>
-    
-  </div>
-  
-  
-  )  
-
-
-
-  
+      <ExperiencesUser u={user} />
+      <ProfileModal show={modalShow} onHide={() => setModalShow(false)} />
+      <ProfileModal
+        show={modalShow}
+        content={content}
+        onHide={() => setModalShow(false)}
+      />
+    </div>
+  );
 };
 export default ExperiencesCard;

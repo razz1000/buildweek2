@@ -2,14 +2,14 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const AddExperience = ({
+const EditExperience = ({
+  setEditExp,
   experience,
   setexperiences,
   allExperiences,
+  editExp,
   profiledata,
   setprofiledata,
-  postExp,
-  setPostExp,
 }) => {
   const [userExperience, setUserExperience] = useState(experience);
 
@@ -18,45 +18,50 @@ const AddExperience = ({
       ...userExperience,
       [field]: e.target.value,
     });
-    setPostExp({
+    setEditExp({
       ...userExperience,
       [field]: e.target.value,
     });
 
     console.log("inside setUserExp: ", userExperience);
   };
+  console.log("User Experience: ", userExperience);
 
   return (
     <Form>
-      <h1>Add Experience</h1>
+      <h1>Edit Experience</h1>
       <Form.Group>
         <br />
         <Form.Control
+          value={userExperience.role}
           type="text"
           placeholder="Role"
           onChange={(e) => change(e, "role")}
         />
         <br />
         <Form.Control
+          value={userExperience.company}
           type="text"
           placeholder="Company"
           onChange={(e) => change(e, "company")}
         />
         <br />
         <Form.Control
-          value="2019-06-16"
+          value={userExperience.startDate}
           type="date"
           placeholder="Start date"
           onChange={(e) => change(e, "startDate")}
         />
         <br />
         <Form.Control
+          value={userExperience.endDate}
           type="date"
           placeholder="End date"
           onChange={(e) => change(e, "endDate")}
         />
         <br />
         <Form.Group
+          value={userExperience.description}
           type="text"
           controlId="exampleForm.ControlTextarea1"
           onChange={(e) => change(e, "description")}
@@ -65,6 +70,7 @@ const AddExperience = ({
         </Form.Group>
         <br />
         <Form.Control
+          value={userExperience.area}
           type="text"
           placeholder="Location"
           onChange={(e) => change(e, "area")}
@@ -75,4 +81,4 @@ const AddExperience = ({
   );
 };
 
-export default AddExperience;
+export default EditExperience;

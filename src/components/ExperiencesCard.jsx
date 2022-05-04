@@ -3,30 +3,14 @@ import "../stylesheets/experiencesCard-stylesheet.css";
 import Experience from "./Experience";
 
 const ExperiencesCard = (props) => {
-  const [user, setUser] = useState([]);
+  const [experiences, setExperiences] = useState([]);
   const [action, setAction] = useState();
   console.log("what action? ", action);
   const getAction = (action) => {
     setAction(action);
   };
 
-  console.log("main state:", user);
-
-  const editUsersData = (obj) => {
-    // obj is the body obj for the PUT/DELETE method
-    if (action === "edit") {
-      let foundObj = user.users.filter((exp) => exp._id !== obj._id);
-      console.log("UnPushed: ", foundObj);
-      foundObj.push(obj);
-      console.log("Pushed: ", foundObj);
-      setUser({ users: foundObj });
-    } else if (action === "add") {
-      user.users.push(obj);
-      console.log("Added: ", obj);
-      setUser({ users: user.users });
-    }
-  };
-  console.log("state: ", user);
+  console.log("main state:", experiences);
 
   const fetchNewId = async (id) => {
     try {
@@ -42,7 +26,7 @@ const ExperiencesCard = (props) => {
       if (response.ok) {
         const data = await response.json();
 
-        setUser({ users: data });
+        setExperiences(data);
         console.log("Fetched data: ", data);
       }
     } catch (error) {
@@ -65,14 +49,17 @@ const ExperiencesCard = (props) => {
           <h3>Experiences</h3>
         </div>
       </div>
-      {/* I have mapped through users and I passed one obj to the Experience comp to dinamicaly update the data */}
-      {user.users &&
-        user.users.map((exp) => (
+      {experiences &&
+        experiences.map((exp) => (
           <Experience
+            profiledata={props.profiledata}
+            setprofiledata={props.setprofiledata}
             key={exp._id}
             getaction={getAction}
-            user={exp}
-            edituserdata={editUsersData}
+            experience={exp}
+            setexperiences={setExperiences}
+            allExperiences={experiences}
+            action={action}
           />
         ))}
       {/* <ExperiencesUser users={user} /> */}

@@ -4,6 +4,8 @@ import FeedStartAPostSection from './FeedStartAPostSection'
 import FeedSidebarTop from './FeedSidebarTop'
 import FeedSidebarRecent from './FeedSidebarRecent'
 import FeedPostMainContainer from './FeedPostMainContainer'
+import LinkedInNews from './LinkedInNews'
+import UnderLinkedInNews from './UnderLinkedInNews'
 
 const Newsfeed = ({ profiledata }) => {
   return (
@@ -17,7 +19,10 @@ const Newsfeed = ({ profiledata }) => {
           <FeedStartAPostSection profiledata={profiledata} />
           <FeedPostMainContainer />
         </Col>
-        <Col md={3}></Col>
+        <Col md={3}>
+          <LinkedInNews />
+          <UnderLinkedInNews />
+        </Col>
       </Row>
       <Row>
         <Col></Col>

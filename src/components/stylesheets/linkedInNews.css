@@ -1,0 +1,23 @@
+.linked-in-news-container {
+  border: solid gray;
+  border-width: 0.1px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.linked-in-news-container .news-item-big {
+  font-size: 14px;
+  font-weight: 700;
+}
+.linked-in-news-container .news-item-small {
+  font-size: 12px;
+  margin-left: 11px;
+}
+.linked-in-news-container .news-item-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.linked-in-news-container .heading-row {
+  margin-top: 10px;
+}

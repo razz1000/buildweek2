@@ -10,7 +10,6 @@ import ExperiencesCard from "./ExperiencesCard";
 
 const ProfilePage = ({ profiledata, setprofiledata }) => {
   const [allProfiles, setAllProfiles] = useState([]);
-
   const [experiencesId, setExperiencesId] = useState("");
 
   const editProfileData = (e, field) => {
@@ -74,7 +73,10 @@ const ProfilePage = ({ profiledata, setprofiledata }) => {
             editprofiledata={editProfileData}
             putprofiledata={putProfileData}
           />
-          <ExperiencesCard profileId={profiledata._id} />
+          <ExperiencesCard
+            profiledata={profiledata}
+            profileId={profiledata._id}
+          />
         </Col>
         <Col md={4}>
           <SidebarTop />

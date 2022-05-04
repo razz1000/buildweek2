@@ -14,8 +14,9 @@ const Newsfeed = ({ profiledata }) => {
           <FeedSidebarTop profiledata={profiledata} />
           <FeedSidebarRecent />
         </Col>
-        <Col md={6}></Col>
+        <Col md={6}>
           <FeedStartAPostSection profiledata={profiledata}/>
+          </Col>
         <Col md={3}></Col>
       </Row>
       <Row>

@@ -2,6 +2,8 @@
   font-size: 12px;
   border-radius: 15px;
   background-color: white;
+  position: sticky;
+  top: 10px;
 }
 .discover-more-sidebar-button p {
   font-size: 14px;

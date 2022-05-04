@@ -8,15 +8,15 @@ import SidebarExtraSection from "./SidebarExtraSection";
 import { useParams } from "react-router-dom";
 import ExperiencesCard from "./ExperiencesCard";
 
-const ProfilePage = () => {
+const ProfilePage = ({ profiledata, setprofiledata }) => {
   const [allProfiles, setAllProfiles] = useState([]);
-  const [profileData, setProfileData] = useState([]);
+
   const [experiencesId, setExperiencesId] = useState("");
 
   const editProfileData = (e, field) => {
     console.log(field);
-    setProfileData({
-      ...profileData,
+    setprofiledata({
+      ...profiledata,
       [field]: e.target.value,
     });
   };
@@ -27,7 +27,7 @@ const ProfilePage = () => {
         "https://striveschool-api.herokuapp.com/api/profile/",
         {
           method: "PUT",
-          body: JSON.stringify(profileData),
+          body: JSON.stringify(profiledata),
           headers: {
             authorization:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
@@ -38,7 +38,7 @@ const ProfilePage = () => {
 
       const data = await response.json();
 
-      setProfileData(data);
+      setprofiledata(data);
       console.log("✅Everything went well, infos were updated!", data);
     } catch (error) {
       console.log("❌ something went wrong: ", error);
@@ -61,30 +61,7 @@ const ProfilePage = () => {
     console.log(data.slice(0, 8));
     setAllProfiles(data);
   };
-  const fetchProfileData = async (userId) => {
-    const linkToFetch = `https://striveschool-api.herokuapp.com/api/profile/${
-      userId || "me"
-    }`;
-    const response = await fetch(linkToFetch, {
-      headers: {
-        authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
-      },
-    });
 
-    const data = await response.json();
-
-    setProfileData(data);
-    console.log(data);
-  };
-  let params = useParams();
-  useEffect(() => {
-    if (params) {
-      fetchProfileData(params.userId);
-    } else {
-      fetchProfileData();
-    }
-  }, []);
   useEffect(() => {
     fetchAllProfiles();
   }, []);
@@ -93,11 +70,11 @@ const ProfilePage = () => {
       <Row>
         <Col md={8}>
           <ProfileJumbotron
-            profiledata={profileData}
+            profiledata={profiledata}
             editprofiledata={editProfileData}
             putprofiledata={putProfileData}
           />
-          <ExperiencesCard profileId={profileData._id} />
+          <ExperiencesCard profileId={profiledata._id} />
         </Col>
         <Col md={4}>
           <SidebarTop />

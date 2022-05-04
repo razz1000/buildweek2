@@ -1,14 +1,53 @@
+import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './stylesheets/feedPostMainContainer.css'
 
 const FeedPostMainContainer = () => {
+  
+let [allPosts, setAllPosts] = useState([])
+const [postID, setPostID] = useState("")
+let options = {
+  headers: {
+    authorization:
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s'
+  }
+}
+
+  let fetchDynamicData = async () => {
+    let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/", options)
+    
+    if(response.ok) {
+      let body = await response.json()
+      let slicedArray = body.slice(0,200)
+      console.log(slicedArray)
+      setAllPosts(slicedArray)
+    }
+  }
+
+useEffect(() => {
+  fetchDynamicData()
+}, [])
+
+
+  
+  let EditpostsOnFeed = (event) => {
+    return ( 
+      <div></div>
+    )
+  }
+
+
+
+  
   return (
-    <Container className="feed-post-main-container">
+    allPosts.map((p) => {
+      return( 
+    <Container className="feed-post-main-container" key={p._id}>
       <Row className="top-row">
         <Col md={2}>
           <img
             className="profile-image"
-            src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427"
+            src={p.user.image}
             alt="profile"
             height="70px"
             width="70px"
@@ -17,27 +56,28 @@ const FeedPostMainContainer = () => {
         <Col md={8}>
           <Row>
             <span className="big-text-size">
-              f.name l.name - logo - following
+              {p.user.name + " " + p.user.surname}
             </span>
           </Row>
           <Row>
-            <span className="small-text-size">Co-chair - Foundation</span>
+            <span className="small-text-size">{p.user.title}</span>
           </Row>
           <Row>
-            <span className="small-text-size">19h - logo</span>
+            <span className="small-text-size">{p.createdAt}</span>
           </Row>
         </Col>
         <Col md={2}>
-          <span>...</span>
+        <i className="bi bi-three-dots" style={{cursor: "pointer"}} onClick={(() => {
+          EditpostsOnFeed()
+          setPostID(p._id)
+        })
+          }></i> 
         </Col>
       </Row>
       <Row className="text-row">
         <Col>
           <p>
-            post text goes here post text goes here post text goes here post
-            text goes here post text goes here post text goes here post text
-            goes here post text goes here post text goes here post text goes
-            here.
+            {p.text}
           </p>
         </Col>
       </Row>
@@ -75,6 +115,7 @@ const FeedPostMainContainer = () => {
         </Col>
       </Row>
     </Container>
+    )})
   )
 }
 export default FeedPostMainContainer

@@ -3,12 +3,12 @@ import { Row, Col, Container } from 'react-bootstrap'
 import FeedSidebarTop from './FeedSidebarTop'
 import FeedSidebarRecent from './FeedSidebarRecent'
 
-const Newsfeed = () => {
+const Newsfeed = ({ profiledata }) => {
   return (
     <Container>
       <Row>
         <Col md={3}>
-          <FeedSidebarTop />
+          <FeedSidebarTop profiledata={profiledata} />
           <FeedSidebarRecent />
         </Col>
         <Col md={6}></Col>

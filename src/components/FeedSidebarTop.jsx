@@ -1,7 +1,14 @@
 import './stylesheets/feedSidebarTop.css'
 import { Container, Row, Col } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
 
-const FeedSidebarTop = () => {
+const FeedSidebarTop = ({ profiledata }) => {
+  const [updatedId, setUpdatedId] = useState([])
+
+  useEffect(() => {
+    console.log(profiledata)
+    setUpdatedId(profiledata)
+  }, [profiledata])
   return (
     <Container className="feed-sidebar-top-main-container">
       <Row>
@@ -14,12 +21,14 @@ const FeedSidebarTop = () => {
         />
         <img
           className="rounded-profile-image"
-          src="https://placekitten.com/85/85"
+          src={updatedId.image}
           alt="kitten"
         />
         <Col className="space-for-image">
-          <p className="text-center main-name">Leon Bourke</p>
-          <p className="text-center main-title">Co Founder</p>
+          <p className="text-center main-name">
+            {updatedId.name} {updatedId.surname}
+          </p>
+          <p className="text-center main-title">{updatedId.title}</p>
         </Col>
       </Row>
       <Row className="connections-row">

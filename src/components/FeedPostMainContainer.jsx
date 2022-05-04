@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './stylesheets/feedPostMainContainer.css'
-
-const FeedPostMainContainer = () => {
+import FeedPostMainContainerModal from './FeedPostMainContainerModal'
+import FeedPostMainContainerModalContent from "./FeedPostMainContainerModalContent"
+const FeedPostMainContainer = (props) => {
   
 let [allPosts, setAllPosts] = useState([])
-const [postID, setPostID] = useState("")
+const [postData, setpostData] = useState([])
+const [modalShow, setModalShow] = useState(false);
+
 let options = {
   headers: {
     authorization:
@@ -18,7 +21,7 @@ let options = {
     
     if(response.ok) {
       let body = await response.json()
-      let slicedArray = body.slice(0,200)
+      let slicedArray = body.reverse().slice(0,200)
       console.log(slicedArray)
       setAllPosts(slicedArray)
     }
@@ -29,15 +32,11 @@ useEffect(() => {
 }, [])
 
 
-  
   let EditpostsOnFeed = (event) => {
     return ( 
       <div></div>
     )
   }
-
-
-
   
   return (
     allPosts.map((p) => {
@@ -69,9 +68,27 @@ useEffect(() => {
         <Col md={2}>
         <i className="bi bi-three-dots" style={{cursor: "pointer"}} onClick={(() => {
           EditpostsOnFeed()
-          setPostID(p._id)
+          setpostData(p)
+          setModalShow(true)
         })
           }></i> 
+    <FeedPostMainContainerModal
+          show={modalShow}
+         content={<FeedPostMainContainerModalContent postData={postData}/>}
+            title={<p>Edit Your post</p>}
+            onHide={() => setModalShow(false)}
+      />
+
+{/* <NewsFeedModalForTopCard
+          show={modalShow}
+         content={<FeedStartAPostModal profiledata={props.profiledata}/>}
+            title={<p>Create a post</p>}
+            onHide={() => setModalShow(false)}
+      />
+ */}
+
+
+
         </Col>
       </Row>
       <Row className="text-row">

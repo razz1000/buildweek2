@@ -53,11 +53,13 @@ const ExperiencesCard = (props) => {
         experiences.map((exp) => (
           <Experience
             profiledata={props.profiledata}
+            setprofiledata={props.setprofiledata}
             key={exp._id}
             getaction={getAction}
             experience={exp}
             setexperiences={setExperiences}
             allExperiences={experiences}
+            action={action}
           />
         ))}
       {/* <ExperiencesUser users={user} /> */}

@@ -75,6 +75,7 @@ const ProfilePage = ({ profiledata, setprofiledata }) => {
           />
           <ExperiencesCard
             profiledata={profiledata}
+            setprofiledata={setprofiledata}
             profileId={profiledata._id}
           />
         </Col>

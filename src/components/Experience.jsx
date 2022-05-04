@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileModal from "./ProfileModal";
 import { useState, useEffect } from "react";
+import EditExperience from "./EditExperience";
 import AddExperience from "./AddExperience";
 
 const Experience = ({
@@ -9,13 +10,16 @@ const Experience = ({
   getaction,
   setexperiences,
   profiledata,
+  setprofiledata,
+  action,
 }) => {
   const [modalShow, setModalShow] = useState(false);
   const [content, setContent] = useState();
   const [title, setTitle] = useState();
-  const [editExp, setEditExp] = useState("initial value exp");
+  const [editExp, setEditExp] = useState(experience);
+  const [postExp, setPostExp] = useState();
 
-  let putExp = async () => {
+  let putExperience = async () => {
     try {
       let response = await fetch(
         `
@@ -34,12 +38,38 @@ const Experience = ({
       let data = await response.json();
 
       setEditExp(data);
+
       console.log("✅Everything went well, infos were updated!", data);
     } catch (error) {
-      console.log("❌ something went wrong: ", error);
+      console.log("❌ something went wrong ON PUT: ", error);
     }
   };
+  let postExperience = async () => {
+    try {
+      let response = await fetch(
+        `
+  https://striveschool-api.herokuapp.com/api/profile/${profiledata._id}/experiences/`,
+        {
+          method: "POST",
+          body: JSON.stringify(postExp),
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+            "Content-type": "application/json",
+          },
+        }
+      );
 
+      let data = await response.json();
+
+      setEditExp(data);
+
+      console.log("✅Everything went well, infos were ADDED!", data);
+    } catch (error) {
+      console.log("❌ something went wrong ON POST: ", error);
+    }
+  };
+  useEffect(() => setprofiledata(profiledata), [editExp]);
   return (
     <div className="row d-flex justify-content-between">
       <div className="col-2">
@@ -51,13 +81,13 @@ const Experience = ({
       </div>
       <div className="col-7 p-0">
         <div>
-          <h5 className="header-text">{experience.role}</h5>
+          <h5 className="header-text">{editExp.role}</h5>
         </div>
-        <p className="text-under-header">{experience.company}</p>
+        <p className="text-under-header">{editExp.company}</p>
         <p className="year-text">
-          {experience.startDate} - {experience.endDate}
+          {editExp.startDate} - {editExp.endDate}
         </p>
-        <p className="year-text">{experience.area}</p>
+        <p className="year-text">{editExp.area}</p>
       </div>
 
       <div className="col-3 d-flex justify-content-end align-items-center">
@@ -69,9 +99,12 @@ const Experience = ({
             setModalShow(true);
             setContent(() => (
               <AddExperience
+                profiledata={profiledata}
+                setprofiledata={setprofiledata}
                 experience={experience}
                 setexperiences={setexperiences}
-                setEditExp={setEditExp}
+                postExp={postExp}
+                setPostExp={setPostExp}
               />
             ));
           }}
@@ -84,16 +117,20 @@ const Experience = ({
             getaction("edit");
             setModalShow(true);
             setContent(() => (
-              <AddExperience
+              <EditExperience
+                profiledata={profiledata}
+                setprofiledata={setprofiledata}
                 experience={experience}
                 setexperiences={setexperiences}
-                allExperiences={allExperiences}
+                setEditExp={setEditExp}
+                editExp={editExp}
               />
             ));
           }}
         ></i>
       </div>
       <ProfileModal
+        putprofiledata={action === "edit" ? putExperience : postExperience}
         show={modalShow}
         content={content}
         title={title}

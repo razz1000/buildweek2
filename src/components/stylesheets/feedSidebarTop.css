@@ -1,10 +1,9 @@
 .feed-sidebar-top-main-container {
   font-size: 12px;
-  border: solid gray;
-  border-width: 0.1px;
   border-radius: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: white;
 }
 .connections-row {
   padding-top: 16px;
@@ -12,6 +11,7 @@
   border-top: solid gray;
   border-bottom: solid gray;
   border-width: 0.1px;
+  border-color: #ebebeb;
 }
 .grow-your-network-text {
   font-weight: 600;

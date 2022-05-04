@@ -1,8 +1,7 @@
 .sidebar-recent-main-container {
   font-size: 12px;
-  border: solid gray;
-  border-width: 0.1px;
   border-radius: 15px;
+  background-color: white;
 }
 .discover-more-sidebar-button p {
   font-size: 14px;

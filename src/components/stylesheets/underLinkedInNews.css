@@ -1,9 +1,8 @@
 .under-linked-in-news-main-container {
   border-radius: 15px;
   margin-top: 10px;
-  border: solid gray;
-  border-width: 0.1px;
   padding-top: 10px;
+  background-color: white;
 }
 .under-linked-in-news-main-container .small-text {
   font-size: 12px;

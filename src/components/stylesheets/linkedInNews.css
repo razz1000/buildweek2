@@ -1,8 +1,7 @@
 .linked-in-news-container {
-  border: solid gray;
-  border-width: 0.1px;
   border-radius: 15px;
   margin-top: 10px;
+  background-color: white;
 }
 
 .linked-in-news-container .news-item-big {

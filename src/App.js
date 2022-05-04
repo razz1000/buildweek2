@@ -6,9 +6,9 @@ import ProfilePage from "./components/ProfilePage";
 
 // import EducationCard from "./components/EducationCard"
 import "./App.css";
-
 import "./stylesheets/profile-jumbotron.css";
 import NavBar from "./components/Navbar";
+import Newsfeed from "./components/Newsfeed";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route path={"/profile-page"} element={<ProfilePage />} />
           <Route path={"/profile-page/:userId"} element={<ProfilePage />} />
+          <Route path={"/feed"} element={<Newsfeed />} />
         </Routes>
 
         <Footer />

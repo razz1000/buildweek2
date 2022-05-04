@@ -1,10 +1,12 @@
 import React from "react-bootstrap";
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl,Container } from "react-bootstrap";
 import "../stylesheets/navBar-stylesheet.css";
 
 let NavBar = () => {
   return (
-    <Navbar bg="light" expand="lg" className="navbar-outer">
+  <Container>
+   
+   <Navbar bg="light" expand="lg" className="navbar-outer">
       <div className="navbar-icon-and-search">
         <Navbar.Brand href="#home">
           <i className="bi bi-linkedin linkedin-icon"></i>
@@ -70,6 +72,7 @@ let NavBar = () => {
         </Navbar.Collapse>
       </div>
     </Navbar>
+    </Container>
   );
 };
 

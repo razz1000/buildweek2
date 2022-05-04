@@ -4,8 +4,9 @@
 .the-whole-card-news-feed-top {
     background-color: white;
     border: 1px solid rgb(202, 198, 198);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 1em;
+    margin-top: 10px;
 }
 
 

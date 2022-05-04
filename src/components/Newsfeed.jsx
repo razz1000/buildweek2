@@ -1,19 +1,28 @@
+
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import FeedStartAPostSection from "./FeedStartAPostSection";
+import FeedSidebarTop from './FeedSidebarTop'
+import FeedSidebarRecent from './FeedSidebarRecent'
 
-const Newsfeed = (props) => {
+
+const Newsfeed = ({ profiledata }) => {
   return (
     <Container>
       <Row>
-        <Col md={3}></Col>
-        <Col md={6}>
-          <FeedStartAPostSection profiledata={props.profiledata}/>
+        <Col md={3}>
+          <FeedSidebarTop profiledata={profiledata} />
+          <FeedSidebarRecent />
         </Col>
+        <Col md={6}></Col>
+          <FeedStartAPostSection profiledata={profiledata}/>
         <Col md={3}></Col>
       </Row>
+      <Row>
+        <Col></Col>
+      </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default Newsfeed;
+export default Newsfeed

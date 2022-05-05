@@ -34,11 +34,11 @@ const UploadProfilePicture = () => {
 
   return (
     <div>
-      <div class="form-group">
+      <div className="form-group">
         <label for="exampleFormControlFile1">Upload an image</label>
         <input
           type="file"
-          class="form-control-file"
+          className="form-control-file"
           id="exampleFormControlFile1"
           onChange={selected}
         />
@@ -46,7 +46,7 @@ const UploadProfilePicture = () => {
       <button
         type="button"
         onClick={() => console.log("click")}
-        class="btn btn-primary"
+        className="btn btn-primary"
       >
         Upload
       </button>

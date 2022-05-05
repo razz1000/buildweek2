@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./stylesheets/singlePerson.css";
-import { useLocation } from "react-router-dom";
+
 
 const SinglePerson = (props) => {
   return (
@@ -16,7 +16,7 @@ const SinglePerson = (props) => {
         </Col>
         <Col md={9}>
           <Row>
-            {console.log("Use location: ", useLocation())}
+            
             <Link to={`/profile-page/${props.profile._id}`}>
               <span className="name">
                 {props.profile.name} {props.profile.surname}

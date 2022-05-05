@@ -32,4 +32,3 @@ const Newsfeed = ({ profiledata }) => {
 }
 
 export default Newsfeed
-

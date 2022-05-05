@@ -36,4 +36,3 @@ const FeedPostMainContainer = (props) => {
   });
 };
 export default FeedPostMainContainer;
-

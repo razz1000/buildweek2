@@ -1,0 +1,22 @@
+.under-linked-in-news-main-container {
+  border-radius: 15px;
+  margin-top: 10px;
+  padding-top: 10px;
+  background-color: white;
+  position: sticky;
+  top: 10px;
+}
+.under-linked-in-news-main-container .small-text {
+  font-size: 12px;
+}
+.under-linked-in-news-main-container .big-text {
+  font-size: 14px;
+}
+.under-linked-in-news-main-container .under-news-img {
+  height: 100px;
+  width: 100px;
+}
+.under-linked-in-news-main-container Button {
+  border-radius: 16px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,17 @@
+.sidebar-recent-main-container {
+  font-size: 12px;
+  border-radius: 15px;
+  background-color: white;
+  position: sticky;
+  top: 10px;
+}
+.discover-more-sidebar-button p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.sidebar-recent-main-container a:hover {
+  text-decoration: underline;
+}
+.sidebar-recent-main-container .hover-row:hover {
+  background-color: rgb(202, 205, 208);
+}

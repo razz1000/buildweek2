@@ -1,0 +1,37 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+
+
+.top-section-picture-and-info {
+    display: flex;
+}
+
+.name-and-where-to-post {
+    display: flex;
+    align-items: baseline;
+    border-radius: 20px;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.texts-for-the-modal {
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-right: 0.8em;
+    padding-left: 0.8em;
+}
+
+.form-text-area {
+    text-decoration: none;
+    border: none;
+    padding-left: 0;
+}
+
+.hashtag-text {
+    color: blue;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+}

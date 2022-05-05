@@ -1,34 +1,16 @@
-import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
-import FeedStartAPostSection from './FeedStartAPostSection'
-import FeedSidebarTop from './FeedSidebarTop'
-import FeedSidebarRecent from './FeedSidebarRecent'
-import FeedPostMainContainer from './FeedPostMainContainer'
-import LinkedInNews from './LinkedInNews'
-import UnderLinkedInNews from './UnderLinkedInNews'
+import React from "react";
+import { Row, Col, Container } from "react-bootstrap";
 
-const Newsfeed = ({ profiledata }) => {
+const Newsfeed = () => {
   return (
     <Container>
       <Row>
-        <Col md={3}>
-          <FeedSidebarTop profiledata={profiledata} />
-          <FeedSidebarRecent />
-        </Col>
-        <Col md={6}>
-          <FeedStartAPostSection profiledata={profiledata} />
-          <FeedPostMainContainer />
-        </Col>
-        <Col md={3}>
-          <LinkedInNews />
-          <UnderLinkedInNews />
-        </Col>
-      </Row>
-      <Row>
-        <Col></Col>
+        <Col md={3}></Col>
+        <Col md={6}></Col>
+        <Col md={3}></Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default Newsfeed
+export default Newsfeed;

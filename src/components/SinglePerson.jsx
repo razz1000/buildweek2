@@ -2,6 +2,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./stylesheets/singlePerson.css";
 
+
 const SinglePerson = (props) => {
   return (
     <Container fluid className="py-1">
@@ -15,6 +16,7 @@ const SinglePerson = (props) => {
         </Col>
         <Col md={9}>
           <Row>
+            
             <Link to={`/profile-page/${props.profile._id}`}>
               <span className="name">
                 {props.profile.name} {props.profile.surname}

@@ -43,7 +43,11 @@ const UploadProfilePicture = () => {
           onChange={selected}
         />
       </div>
-      <button type="button" onClick={uploadImage} class="btn btn-primary">
+      <button
+        type="button"
+        onClick={() => console.log("click")}
+        class="btn btn-primary"
+      >
         Upload
       </button>
     </div>

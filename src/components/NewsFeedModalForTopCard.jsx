@@ -52,6 +52,7 @@ const NewsFeedModalForTopCard = (props) => {
       <Modal.Footer className="icons-and-text-and-button">
       
         <div>
+
             <i class="bi bi-image icons-together image-icon"></i>
             <i class="bi bi-play-btn icons-together"></i>
             <i class="bi bi-file-earmark-text icons-together"></i>

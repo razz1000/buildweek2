@@ -1,8 +1,70 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {Modal, Container, Button} from "react-bootstrap"
+import FeedPostMainContainerModalContent from "./FeedPostMainContainerModalContent"
+import {useState} from "react"
+import {location} from "react"
+import "../stylesheets/feedPostMainContainerModal-stylesheet.css"
+
 
 let FeedPostMainContainerModal = (props) => {
-    return(
+   
+  
+ const [userInputText, setUserInputText] = useState("")
+ const [postID, setpostID] = useState()
+
+      let editDataFunction = async () => {
+      let bodyData = {
+         text: userInputText
+            }
+        let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + postID,{
+            
+          
+          method: 'PUT',
+              body: JSON.stringify(bodyData),
+              headers: {
+              "Content-Type": "application/json",
+                authorization:
+                  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s',
+                 }
+            })
+
+            if(response.ok) {
+                console.log(response)
+                alert("Post updated")
+                location.reload();
+            }
+      }
+
+
+      useEffect(() => {
+        
+        setpostID(props.postData._id)
+      },[])
+
+
+
+      let deleteFunction = async () => {
+        let response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + postID,{
+          method: 'DELETE',
+              headers: {
+                authorization:
+                  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s',
+                 }
+            })
+            if(response.ok) {
+/*               let body = await response.json(); */
+
+              alert("Post deleted")
+            }
+      }
+
+
+
+
+
+
+
+  return(
  
 <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
@@ -11,11 +73,18 @@ let FeedPostMainContainerModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
-        <Container>{props.content}</Container>
+        <Container
+        onChange={(event) => setUserInputText(event.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector(".input-field-area1").value)}><FeedPostMainContainerModalContent postData={props.postData}/></Container>
       </Modal.Body>
       <Modal.Footer className="icons-and-text-and-button">
       
         <div>
+            <i class="bi bi-trash3-fill delete-button"
+            onClick={() => {
+              deleteFunction()
+              props.onHide();
+            }}
+            ></i>
             <i class="bi bi-image icons-together image-icon"></i>
             <i class="bi bi-play-btn icons-together"></i>
             <i class="bi bi-file-earmark-text icons-together"></i>
@@ -35,9 +104,10 @@ let FeedPostMainContainerModal = (props) => {
           onClick={(event) => {
 
 /*             props.putprofiledata(); */
-            console.log(event.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector(".form-text-area").value) 
-
+            console.log(event.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector(".input-field-area1").value) 
+/*             setUserInputText(event.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector(".input-field-area1").value) */
             
+            editDataFunction()
             props.onHide();
           }}
         >

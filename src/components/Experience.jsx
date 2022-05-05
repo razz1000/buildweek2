@@ -72,7 +72,7 @@ const Experience = ({
   useEffect(() => setprofiledata(profiledata), [editExp]);
   return (
     <div className="row d-flex justify-content-between">
-      <div className="col-2 pl-4 ">
+      <div className="col-2">
         <img
           src="https://www.pngkey.com/png/full/240-2401662_cbs-logo-vertical-notext-blue-rgb-copenhagen-business.png"
           className="education-logo"

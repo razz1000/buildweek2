@@ -1,16 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const AddExperience = ({
-  experience,
-  setexperiences,
-  allExperiences,
-  profiledata,
-  setprofiledata,
-  postExp,
-  setPostExp,
-}) => {
+const AddExperience = ({ experience, setPostExp }) => {
   const [userExperience, setUserExperience] = useState(experience);
 
   let change = (e, field) => {

@@ -5,40 +5,15 @@ import ProfileModal from "./ProfileModal";
 import { useState } from "react";
 import { Row } from "react-bootstrap";
 import EditJumbotronForm from "./EditJumbotronForm";
+import UploadProfilePicture from "./UploadProfilePicture";
 
 const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
   const [modalShow, setModalShow] = useState(false);
-  const [image, setImage] = useState(``);
-  const [loading, setLoading] = useState(false);
 
-  const uploadImage = async (e) => {
-    const files = e.target.files;
-    const data = new FormData();
-    data.append("profile", files[0]);
-    setLoading(true);
-    try {
-      const res = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/626fc30317c4e00015d7a082/picture",
-        {
-          method: "POST",
-          body: data,
-          headers: {
-            authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
-          },
-        }
-      );
-      const file = await res.json();
-      setLoading(false);
-      console.log(file);
-    } catch (error) {
-      console.log(`❌error❌`, error);
-    }
-  };
+  const [modalContent, setModalContent] = useState();
 
   return (
     <div className="profile-jumbotron ">
-      <input type="file" id="profile" name="profile" onChange={uploadImage} />
       <Row>
         <img
           className="profile-cover"
@@ -58,7 +33,17 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
       </Row>
 
       <Row>
-        <img className="profile-img" src={profiledata.image} alt="" />
+        <img
+          className="profile-img"
+          src={profiledata.image}
+          alt=""
+          onClick={() => {
+            console.log("cliock");
+            setModalContent(<UploadProfilePicture />);
+            setModalShow(true);
+          }}
+        />
+
         <div
           className={`edit-info-btn d-flex  justify-content-center align-items-center`}
           style={{ top: "11rem", right: "2rem" }}
@@ -66,18 +51,21 @@ const ProfileJumbotron = ({ profiledata, editprofiledata, putprofiledata }) => {
           <i
             className="fa-solid fa-pencil mr-4 mt-4 "
             style={{ position: "absolute", bottom: "0.5rem", left: "9px" }}
-            onClick={() => setModalShow(true)}
+            onClick={() => {
+              setModalContent(
+                <EditJumbotronForm
+                  profiledata={profiledata}
+                  editprofiledata={editprofiledata}
+                />
+              );
+              setModalShow(true);
+            }}
           ></i>
         </div>
       </Row>
       <Row>
         <ProfileModal
-          content={
-            <EditJumbotronForm
-              profiledata={profiledata}
-              editprofiledata={editprofiledata}
-            />
-          }
+          content={modalContent}
           putprofiledata={putprofiledata}
           profiledata={profiledata}
           show={modalShow}

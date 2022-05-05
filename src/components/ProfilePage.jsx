@@ -11,6 +11,7 @@ import ExperiencesCard from "./ExperiencesCard";
 const ProfilePage = ({ profiledata, setprofiledata }) => {
   const [allProfiles, setAllProfiles] = useState([]);
   const [experiencesId, setExperiencesId] = useState("");
+  const [profile, setProfile] = useState();
 
   const editProfileData = (e, field) => {
     console.log(field);
@@ -60,24 +61,63 @@ const ProfilePage = ({ profiledata, setprofiledata }) => {
     console.log(data.slice(0, 8));
     setAllProfiles(data);
   };
+  const fetchProfileData = async (userId) => {
+    const linkToFetch = `https://striveschool-api.herokuapp.com/api/profile/${userId}`;
+    const response = await fetch(linkToFetch, {
+      headers: {
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+      },
+    });
 
+    const data = await response.json();
+
+    setProfile(data);
+  };
   useEffect(() => {
     fetchAllProfiles();
+    if (params) {
+      fetchProfileData(params.userId);
+      console.log("profile is fetched again! ");
+    } else {
+      setProfile(profiledata);
+      console.log("profile is set from profiledata");
+    }
   }, []);
+  let params = useParams();
+
   return (
     <Container>
+      {console.log("this data is important:", profile)}
       <Row>
         <Col md={8}>
-          <ProfileJumbotron
-            profiledata={profiledata}
-            editprofiledata={editProfileData}
-            putprofiledata={putProfileData}
-          />
-          <ExperiencesCard
-            profiledata={profiledata}
-            setprofiledata={setprofiledata}
-            profileId={profiledata._id}
-          />
+          {profile ? (
+            <ProfileJumbotron
+              profiledata={profile}
+              editprofiledata={editProfileData}
+              putprofiledata={putProfileData}
+            />
+          ) : (
+            <ProfileJumbotron
+              profiledata={profiledata}
+              editprofiledata={editProfileData}
+              putprofiledata={putProfileData}
+            />
+          )}
+
+          {profile ? (
+            <ExperiencesCard
+              profiledata={profile}
+              setprofiledata={setprofiledata}
+              profileId={profiledata._id}
+            />
+          ) : (
+            <ExperiencesCard
+              profiledata={profiledata}
+              setprofiledata={setprofiledata}
+              profileId={profiledata._id}
+            />
+          )}
         </Col>
         <Col md={4}>
           <SidebarTop />

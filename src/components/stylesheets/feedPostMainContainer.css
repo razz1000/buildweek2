@@ -23,23 +23,41 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-/* .feed-post-main-container .bottom-row {
-  margin-top: 8px;
-  margin-bottom: 8px;
-} */
 .feed-post-main-container .bottom-row .hover-1:hover {
   background-color: rgb(188, 189, 190);
+  cursor: pointer;
 }
 .feed-post-main-container .bottom-row .hover-2:hover {
   background-color: rgb(188, 189, 190);
+  cursor: pointer;
 }
 .feed-post-main-container .bottom-row .hover-3:hover {
   background-color: rgb(188, 189, 190);
+  cursor: pointer;
 }
 .feed-post-main-container .bottom-row .hover-4:hover {
   background-color: rgb(188, 189, 190);
+  cursor: pointer;
 }
 .feed-post-main-container .hr-line {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+.padding-for-middle-row {
+  padding-left: 18px;
+}
+.bi-three-dots {
+  font-size: 24px;
+}
+.feed-post-main-container .text-row {
+  padding-top: 8px;
+}
+.bi-hand-thumbs-up {
+  color: #0a66c2;
+}
+.bi-balloon-heart {
+  color: #538444;
+}
+.bi-chat-right-quote {
+  color: #851a1a;
 }

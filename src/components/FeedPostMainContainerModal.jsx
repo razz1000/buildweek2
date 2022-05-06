@@ -4,9 +4,15 @@ import FeedPostMainContainerModalContent from "./FeedPostMainContainerModalConte
 import {useState} from "react"
 import {location} from "react"
 import "../stylesheets/feedPostMainContainerModal-stylesheet.css"
+import UploadPostPicture from "./UploadPostPicture"
+import ProfileModal from "./ProfileModal"
+
 
 
 let FeedPostMainContainerModal = (props) => {
+  const [modalShow, setModalShow] = useState(false)
+  const [modalContent, setModalContent] = useState()
+
    
   
  const [userInputText, setUserInputText] = useState("")
@@ -31,7 +37,7 @@ let FeedPostMainContainerModal = (props) => {
             if(response.ok) {
                 console.log(response)
                 alert("Post updated")
-                location.reload();
+                window.location.href = 'http://localhost:3000/feed'
             }
       }
 
@@ -85,7 +91,20 @@ let FeedPostMainContainerModal = (props) => {
               props.onHide();
             }}
             ></i>
-            <i class="bi bi-image icons-together image-icon"></i>
+            <i class="bi bi-image icons-together image-icon"
+            onClick={() => {
+              console.log('Clicked ! yehaa')
+              setModalContent(<UploadPostPicture postID={postID} />)
+              setModalShow(true)
+            }}
+            ></i>
+             <ProfileModal
+          content={modalContent}
+/*           putprofiledata={putprofiledata}
+          profiledata={profiledata} */
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
             <i class="bi bi-play-btn icons-together"></i>
             <i class="bi bi-file-earmark-text icons-together"></i>
             <i class="bi bi-briefcase-fill icons-together"></i>

@@ -40,6 +40,7 @@ const FeedPostMainContainerModalContent = (props) => {
           {/*                <Form.Control as="textarea" className="form-text-area" rows={3} placeholder="Hello" value={postDataState.text} onChange={((e) => onChangeFunction(e, "text"))}> */}
           <input
             className="input-field-area1"
+            placeholder={postDataState.text}
             value={text}
             onChange={(e) => {  
                 setText(e.target.value)
@@ -48,6 +49,8 @@ const FeedPostMainContainerModalContent = (props) => {
 
           {/*                     <p></p></Form.Control> */}
         </Form.Group>
+        
+
       </div>
       <p className="hashtag-text">Add hashtag</p>
     </div>

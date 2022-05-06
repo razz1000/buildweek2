@@ -66,7 +66,7 @@ export default function SinglePost({post}) {
       </Col>
     </Row>
     <Row>
-      <img src="https://placekitten.com/538/538" alt="bill" />
+      <img src={post.image} alt="bill" />
     </Row>
     <Row className="likes-under-picture-row mt-2 small-text-size">
       <Col md={6}>

@@ -5,7 +5,7 @@ import ProfilePage from './components/ProfilePage'
 // import NavBar from "./components/NavBar";
 
 // import EducationCard from "./components/EducationCard"
-// import './App.css'
+import './App.css'
 import './stylesheets/profile-jumbotron.css'
 import NavBar from './components/Navbar'
 import Newsfeed from './components/Newsfeed'
@@ -15,10 +15,8 @@ import { useEffect, useState } from 'react'
 function App() {
   const [profileData, setProfileData] = useState([])
 
-  const fetchProfileData = async (userId) => {
-    const linkToFetch = `https://striveschool-api.herokuapp.com/api/profile/${
-      userId || 'me'
-    }`
+  const fetchProfileData = async () => {
+    const linkToFetch = `https://striveschool-api.herokuapp.com/api/profile/me`
     const response = await fetch(linkToFetch, {
       headers: {
         authorization:
@@ -29,18 +27,11 @@ function App() {
     const data = await response.json()
 
     setProfileData(data)
-    console.log(data)
+    console.log('Fetched data from pprofile page: ', data)
   }
 
-  let params = useParams()
-
   useEffect(() => {
-    if (params) {
-      fetchProfileData(params.userId)
-    } else {
-      fetchProfileData()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchProfileData()
   }, [])
 
   return (
@@ -57,7 +48,15 @@ function App() {
               />
             }
           />
-          <Route path={'/profile-page/:userId'} element={<ProfilePage />} />
+          <Route
+            path={'/profile-page/:userId'}
+            element={
+              <ProfilePage
+                profiledata={profileData}
+                setprofiledata={setProfileData}
+              />
+            }
+          />
           <Route
             path={'/feed'}
             element={<Newsfeed profiledata={profileData} />}

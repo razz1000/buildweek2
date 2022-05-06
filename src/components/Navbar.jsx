@@ -1,6 +1,7 @@
 import React from 'react-bootstrap'
 import { Navbar, Nav, Form, FormControl, Container } from 'react-bootstrap'
 import '../stylesheets/navBar-stylesheet.css'
+import { Link } from 'react-router-dom'
 
 let NavBar = () => {
   return (
@@ -9,7 +10,9 @@ let NavBar = () => {
         <Navbar expand="lg" className="navbar-outer">
           <div className="navbar-icon-and-search">
             <Navbar.Brand href="#home">
-              <i className="bi bi-linkedin linkedin-icon"></i>
+              <Link to={'/feed'}>
+                <i className="bi bi-linkedin linkedin-icon"></i>
+              </Link>
             </Navbar.Brand>
             <Form inline>
               <FormControl
@@ -55,10 +58,10 @@ let NavBar = () => {
                   <p className="text-under-icon">Notifications</p>
                 </div>
                 <div className="icons-and-texts-together the-me-icon">
-                  <Nav.Link href="#profile" className="nav-icon-outer">
+                  <Link to={'/profile-page'} className="nav-icon-outer">
                     <i className="bi bi-circle nav-icon"></i>
-                  </Nav.Link>
-                  <p className="text-under-icon">Me ▼</p>
+                    <p className="text-under-icon">Me ▼</p>
+                  </Link>
                 </div>
               </Nav>
               <div className="the-work-icon">

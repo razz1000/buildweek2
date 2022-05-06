@@ -26,6 +26,7 @@
 .feed-post-main-container .bottom-row .hover-1:hover {
   background-color: rgb(188, 189, 190);
   cursor: pointer;
+  border-bottom-left-radius: 15px;
 }
 .feed-post-main-container .bottom-row .hover-2:hover {
   background-color: rgb(188, 189, 190);
@@ -38,6 +39,7 @@
 .feed-post-main-container .bottom-row .hover-4:hover {
   background-color: rgb(188, 189, 190);
   cursor: pointer;
+  border-bottom-right-radius: 15px;
 }
 .feed-post-main-container .hr-line {
   margin-top: 5px;

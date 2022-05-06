@@ -13,6 +13,10 @@
   border-width: 0.1px;
   border-color: #ebebeb;
 }
+.connections-row:hover {
+  background-color: #ebebeb;
+  cursor: pointer;
+}
 .grow-your-network-text {
   font-weight: 600;
 }
@@ -22,9 +26,22 @@
 .access-exclusive-row {
   padding-top: 16px;
   padding-bottom: 16px;
+  border-bottom: solid #ebebeb;
+  border-width: 0.1px;
+}
+.access-exclusive-row:hover {
+  background: #ebebeb;
+  cursor: pointer;
 }
 .my-items-row {
   padding-bottom: 16px;
+  padding-top: 16px;
+}
+.my-items-row:hover {
+  background: #ebebeb;
+  cursor: pointer;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .feed-sidebar-top-main-container Image {
@@ -48,7 +65,14 @@
   font-weight: 700;
   margin-bottom: 0;
 }
+.feed-sidebar-top-main-container .main-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .feed-sidebar-top-main-container .bordered-image {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+.feed-sidebar-top-main-container .rounded-profile-image:hover {
+  cursor: pointer;
 }

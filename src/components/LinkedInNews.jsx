@@ -15,8 +15,9 @@ const LinkedInNews = () => {
       <Row className="news-item-row">
         <Row>
           <Col>
+            <i className="bi bi-dot"></i>
             <span className="news-item-big">
-              - EU nears total ban of Russian oil
+              EU nears total ban of Russian oil
             </span>
           </Col>
         </Row>
@@ -29,9 +30,8 @@ const LinkedInNews = () => {
       <Row className="news-item-row">
         <Row>
           <Col>
-            <span className="news-item-big">
-              - CRA to refund teachers' taxes
-            </span>
+            <i className="bi bi-dot"></i>
+            <span className="news-item-big">CRA to refund teachers' taxes</span>
           </Col>
         </Row>
         <Row>
@@ -43,8 +43,9 @@ const LinkedInNews = () => {
       <Row className="news-item-row">
         <Row>
           <Col>
+            <i className="bi bi-dot"></i>
             <span className="news-item-big">
-              - Will Musk take Twitter public again?
+              Will Musk take Twitter public again?
             </span>
           </Col>
         </Row>
@@ -57,8 +58,9 @@ const LinkedInNews = () => {
       <Row className="news-item-row">
         <Row>
           <Col>
+            <i className="bi bi-dot"></i>
             <span className="news-item-big">
-              - Canada airport chaos amid travel boom
+              Canada airport chaos amid travel boom
             </span>
           </Col>
         </Row>
@@ -71,8 +73,9 @@ const LinkedInNews = () => {
       <Row className="news-item-row">
         <Row>
           <Col>
+            <i className="bi bi-dot"></i>
             <span className="news-item-big">
-              - Analysts worry, pull back on Shopify
+              Analysts worry, pull back on Shopify
             </span>
           </Col>
         </Row>
@@ -81,6 +84,12 @@ const LinkedInNews = () => {
             <span className="news-item-small">17h ago - 964 readers</span>
           </Col>
         </Row>
+      </Row>
+      <Row className="discover-more-sidebar-button hover-row mb-3">
+        <Col className="mt-3 discover-more-sidebar-button">
+          <span>Show more</span>
+          <i className="bi bi-arrow-down ml-2"></i>
+        </Col>
       </Row>
     </Container>
   )

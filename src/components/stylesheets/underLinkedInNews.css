@@ -4,7 +4,7 @@
   padding-top: 10px;
   background-color: white;
   position: sticky;
-  top: 10px;
+  top: 24px;
 }
 .under-linked-in-news-main-container .small-text {
   font-size: 12px;
@@ -19,4 +19,6 @@
 .under-linked-in-news-main-container Button {
   border-radius: 16px;
   margin-bottom: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }

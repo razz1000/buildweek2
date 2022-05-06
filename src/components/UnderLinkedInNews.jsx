@@ -6,7 +6,8 @@ const UnderLinkedInNews = () => {
     <Container className="under-linked-in-news-main-container">
       <Row>
         <Col className="d-flex justify-content-end">
-          <span>Ad ...</span>
+          <span>Ad</span>
+          <i className="bi bi-three-dots ml-2"></i>
         </Col>
       </Row>
       <Row>

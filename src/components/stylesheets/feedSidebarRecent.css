@@ -3,7 +3,7 @@
   border-radius: 15px;
   background-color: white;
   position: sticky;
-  top: 10px;
+  top: 24px;
 }
 .discover-more-sidebar-button p {
   font-size: 14px;
@@ -13,5 +13,30 @@
   text-decoration: underline;
 }
 .sidebar-recent-main-container .hover-row:hover {
-  background-color: rgb(202, 205, 208);
+  background-color: rgb(234, 235, 236);
+  cursor: pointer;
+}
+.sidebar-recent-main-container .bi-hash {
+  font-size: 16px;
+}
+.sidebar-recent-main-container .hidden-hash {
+  visibility: hidden;
+}
+.sidebar-recent-main-container .margin-for-text-top {
+  margin-left: 20px;
+}
+.sidebar-recent-main-container .margin-for-text-bottom {
+  margin-left: 24px;
+}
+.sidebar-recent-main-container hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sidebar-recent-main-container .bi-plus {
+  font-size: 24px;
+  cursor: pointer;
+}
+.sidebar-recent-main-container .discover-more-sidebar-button:hover {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }

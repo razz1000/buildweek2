@@ -57,10 +57,8 @@ const FeedSidebarTop = ({ profiledata }) => {
             </Col>
           </Row>
           <Row>
-            <Col md={2}>
-              <i class="bi bi-card-text"></i>
-            </Col>
-            <Col md={10}>
+            <Col>
+              <i className="bi bi-card-text mr-2"></i>
               <span className="grow-your-network-text">
                 Try Premium for free
               </span>
@@ -70,10 +68,8 @@ const FeedSidebarTop = ({ profiledata }) => {
       </Row>
 
       <Row className="my-items-row">
-        <Col md={2}>
-          <i class="bi bi-bookmark"></i>
-        </Col>
-        <Col md={10}>
+        <Col>
+          <i className="bi bi-bookmark mr-2"></i>
           <span className="grow-your-network-text">My items</span>
         </Col>
       </Row>

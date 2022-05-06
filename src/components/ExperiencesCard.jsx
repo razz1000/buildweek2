@@ -43,7 +43,7 @@ const ExperiencesCard = (props) => {
   }, [props.profileId, props.profiledata]);
 
   return (
-    <div className="sidebar-container ">
+    <div className="sidebar-container  ">
       <div className="d-flex justify-content-between m-3">
         <div>
           <h3>Experiences</h3>

@@ -4,7 +4,7 @@ import './stylesheets/sidebarTop.css'
 const SidebarTop = () => {
   return (
     <Container className="sidebar-row">
-      <Row className="d-flex side-top-hover">
+      <Row className="d-flex side-top-hover align-items-center-end">
         <Col md={10}>
           <span className="sidebar-top-text top-text">
             Edit public profile & URL

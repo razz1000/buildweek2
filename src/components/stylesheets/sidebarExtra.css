@@ -3,23 +3,27 @@
   align-items: center;
   font-weight: 500;
 }
+.sidebar-extra-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .sidebar-main-row {
   background-color: white;
   color: rgb(25, 25, 25);
-  border: solid rgb(224, 223, 220);
+  border: solid #ebebeb;
   border-width: 0.1px;
   border-radius: 15px;
   margin-top: 10px;
   /* padding: 5px; */
 }
 .border-row {
-  border-bottom: dotted gray;
+  border-bottom: solid #ebebeb;
   padding-bottom: 10px;
   border-width: 0.1px;
 }
 .see-all-questions-row {
-  border-top: dotted gray;
+  border-top: solid #ebebeb;
   margin-top: 10px;
   border-width: 0.1px;
 }
@@ -27,7 +31,15 @@
   margin-top: -10px;
 }
 .see-all-questions-row:hover {
-  background-color: aliceblue;
+  cursor: pointer;
+  background-color: #ebebeb;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.bi-linkedin {
+  color: #0072b1;
+  margin-right: 6px;
+}
+.some-more-about-you-text {
+  font-size: 14px;
 }

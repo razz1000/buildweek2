@@ -18,3 +18,9 @@ img {
   margin-left: 4px;
   margin-right: 4px;
 }
+.single-person-link {
+  color: black;
+}
+Button {
+  margin-bottom: 6px;
+}

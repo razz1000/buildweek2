@@ -1,6 +1,9 @@
 .question-mark {
   margin-left: auto;
 }
+.question-mark:hover {
+  cursor: pointer;
+}
 .sidebar-top-text {
   display: inline-block;
   font-weight: 500;
@@ -17,12 +20,20 @@
 .top-text {
   margin-top: 10px;
 }
+.top-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .bottom-text {
   margin-bottom: 10px;
 }
-.side-top-hover:hover {
+.bottom-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* .side-top-hover:hover {
   cursor: pointer;
   background-color: aliceblue;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-}
+} */

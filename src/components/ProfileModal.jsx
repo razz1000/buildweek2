@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Container, Button } from "react-bootstrap";
+import React from 'react'
+import { Modal, Container, Button } from 'react-bootstrap'
 
 const ProfileModal = (props) => {
   return (
@@ -16,16 +16,16 @@ const ProfileModal = (props) => {
         <Button
           type="onSubmit"
           onClick={() => {
-            console.log("Click");
-            props.putprofiledata();
-            props.onHide();
+            console.log('Click')
+            props.putprofiledata()
+            props.onHide()
           }}
         >
           Save
         </Button>
       </Modal.Footer>
     </Modal>
-  );
-};
+  )
+}
 
-export default ProfileModal;
+export default ProfileModal

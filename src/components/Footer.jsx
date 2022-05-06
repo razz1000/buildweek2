@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react'
 import {
   ListGroup,
   Container,
   Row,
   Col,
   Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
-import "../stylesheets/footer-stylesheet.css";
-import EducationCard from "./EducationCard";
+  DropdownButton
+} from 'react-bootstrap'
+import '../stylesheets/footer-stylesheet.css'
 
 let Footer = () => {
   return (
@@ -77,9 +76,8 @@ let Footer = () => {
         </Col>
       </Row>
       <p className="copyright-text">LinkedIn Corporation © 2022</p>
-      <EducationCard />
     </Container>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

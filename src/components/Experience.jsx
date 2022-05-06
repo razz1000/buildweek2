@@ -44,6 +44,30 @@ const Experience = ({
       console.log("❌ something went wrong ON PUT: ", error);
     }
   };
+  let delExperience = async () => {
+    try {
+      let response = await fetch(
+        `
+  https://striveschool-api.herokuapp.com/api/profile/${profiledata._id}/experiences/${experience._id}`,
+        {
+          method: "DELETE",
+
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZmYzMwMzE3YzRlMDAwMTVkN2EwODIiLCJpYXQiOjE2NTE0OTE1ODgsImV4cCI6MTY1MjcwMTE4OH0.yS8YrZCAJfbhN7ye7OAqtaTyteCbwQsztG411czMp8s",
+          },
+        }
+      );
+
+      let data = await response.json();
+
+      setEditExp(profiledata);
+
+      console.log("✅Everything went well, infos were DELETED!", data);
+    } catch (error) {
+      console.log("❌ something went wrong ON DELETE: ", error);
+    }
+  };
   let postExperience = async () => {
     try {
       let response = await fetch(
@@ -62,7 +86,7 @@ const Experience = ({
 
       let data = await response.json();
 
-      setEditExp(data);
+      setEditExp(profiledata);
 
       console.log("✅Everything went well, infos were ADDED!", data);
     } catch (error) {
@@ -109,6 +133,7 @@ const Experience = ({
             ));
           }}
         ></i>
+        {console.log("??", postExp)}
 
         <i
           className="bi bi-pencil  plus-icon m-2"
@@ -126,6 +151,13 @@ const Experience = ({
                 editExp={editExp}
               />
             ));
+          }}
+        ></i>
+        <i
+          className="bi bi-trash3-fill m-2"
+          onClick={() => {
+            delExperience();
+            setEditExp(profiledata);
           }}
         ></i>
       </div>

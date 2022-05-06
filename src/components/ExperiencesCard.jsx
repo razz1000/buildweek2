@@ -40,7 +40,7 @@ const ExperiencesCard = (props) => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.profileId]);
+  }, [props.profileId, props.profiledata]);
 
   return (
     <div className="sidebar-container ">

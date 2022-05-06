@@ -63,3 +63,8 @@
 .bi-chat-right-quote {
   color: #851a1a;
 }
+.post-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

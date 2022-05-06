@@ -95,9 +95,17 @@ const Experience = ({
   };
   useEffect(() => setprofiledata(profiledata), [editExp]);
   return (
-    <div className="row d-flex justify-content-between">
-      <div className="col-2">
-        <img src={editExp.image} className="education-logo" alt="CBS" />
+    <div className="row d-flex  justify-content-between">
+      <div className="col-2 d-flex justify-content-center ">
+        <img
+          src={
+            editExp.image
+              ? editExp.image
+              : "https://previews.123rf.com/images/roxanabalint/roxanabalint1701/roxanabalint170100138/69079014-nicht-verf%C3%BCgbar-grunge-stempel-auf-wei%C3%9Fen-hintergrund-vektor-illustration.jpg"
+          }
+          style={{ height: "65px", width: "65px", objectFit: "cover" }}
+          alt="CBS"
+        />
       </div>
       <div className="col-7 p-0">
         <div>

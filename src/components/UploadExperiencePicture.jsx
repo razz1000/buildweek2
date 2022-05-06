@@ -1,18 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
-const UploadProfilePicture = () => {
+const UploadExperiencePicture = ({ expId }) => {
   const [image, setImage] = useState(``);
   const [loading, setLoading] = useState(false);
   const [imageUploaded, setImageUploaded] = useState("");
-
-  const uploadImage = async (e) => {
+  console.log("inside uploader: ", expId);
+  const uploadImage = async (expId) => {
     const data = new FormData();
-    data.append("profile", image);
+    data.append("experience", image);
     setLoading(true);
     try {
       const res = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/626fc30317c4e00015d7a082/picture",
+        `https://striveschool-api.herokuapp.com/api/profile/626fc30317c4e00015d7a082/experiences/${expId}/picture`,
         {
           method: "POST",
           body: data,
@@ -45,7 +45,11 @@ const UploadProfilePicture = () => {
           onChange={selected}
         />
       </div>
-      <button type="button" onClick={uploadImage} class="btn btn-primary">
+      <button
+        type="button"
+        onClick={() => uploadImage(expId)}
+        class="btn btn-primary"
+      >
         Upload
       </button>
       <div>
@@ -61,4 +65,4 @@ const UploadProfilePicture = () => {
   );
 };
 
-export default UploadProfilePicture;
+export default UploadExperiencePicture;

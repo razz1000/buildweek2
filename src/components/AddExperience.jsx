@@ -1,9 +1,10 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { useState } from "react";
+import UploadExperiencePicture from "./UploadExperiencePicture";
 
 const AddExperience = ({ experience, setPostExp }) => {
-  const [userExperience, setUserExperience] = useState(experience);
+  const [userExperience, setUserExperience] = useState();
 
   let change = (e, field) => {
     setUserExperience({
@@ -29,6 +30,7 @@ const AddExperience = ({ experience, setPostExp }) => {
           onChange={(e) => change(e, "role")}
         />
         <br />
+        <UploadExperiencePicture expId={experience._id} />
         <Form.Control
           type="text"
           placeholder="Company"
@@ -36,7 +38,6 @@ const AddExperience = ({ experience, setPostExp }) => {
         />
         <br />
         <Form.Control
-          value="2019-06-16"
           type="date"
           placeholder="Start date"
           onChange={(e) => change(e, "startDate")}

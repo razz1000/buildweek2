@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { useEffect, useState } from "react";
-
+import UploadExperiencePicture from "./UploadExperiencePicture";
 const EditExperience = ({
   setEditExp,
   experience,
@@ -38,6 +38,8 @@ const EditExperience = ({
           placeholder="Role"
           onChange={(e) => change(e, "role")}
         />
+        <br />
+        <UploadExperiencePicture expId={experience._id} />
         <br />
         <Form.Control
           value={userExperience.company}

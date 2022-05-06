@@ -3,14 +3,16 @@
   margin-top: 10px;
   background-color: white;
   padding-top: 4px;
-  /* text-overflow: ellipsis; */
-  /* overflow: hidden; */
   white-space: nowrap;
 }
 
 .linked-in-news-container .news-item-big {
   font-size: 14px;
   font-weight: 700;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  width: 220px;
 }
 .linked-in-news-container .news-item-small {
   font-size: 12px;

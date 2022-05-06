@@ -7,6 +7,7 @@ import SidebarTop from './SidebarTop'
 import SidebarExtraSection from './SidebarExtraSection'
 import { useParams } from 'react-router-dom'
 import ExperiencesCard from './ExperiencesCard'
+import EducationCard from './EducationCard'
 
 const ProfilePage = ({ profiledata, setprofiledata }) => {
   const [allProfiles, setAllProfiles] = useState([])
@@ -118,6 +119,7 @@ const ProfilePage = ({ profiledata, setprofiledata }) => {
               profileId={profiledata._id}
             />
           )}
+          <EducationCard />
         </Col>
         <Col md={4}>
           <SidebarTop />

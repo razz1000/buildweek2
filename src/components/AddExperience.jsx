@@ -31,7 +31,6 @@ const AddExperience = ({ experience, setPostExp }) => {
         />
         <br />
         <UploadExperiencePicture expId={experience._id} />
-        <br />
         <Form.Control
           type="text"
           placeholder="Company"

@@ -97,11 +97,7 @@ const Experience = ({
   return (
     <div className="row d-flex justify-content-between">
       <div className="col-2">
-        <img
-          src="https://www.pngkey.com/png/full/240-2401662_cbs-logo-vertical-notext-blue-rgb-copenhagen-business.png"
-          className="education-logo"
-          alt="CBS"
-        />
+        <img src={editExp.image} className="education-logo" alt="CBS" />
       </div>
       <div className="col-7 p-0">
         <div>

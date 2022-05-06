@@ -5,7 +5,7 @@ const UploadExperiencePicture = ({ expId }) => {
   const [image, setImage] = useState(``);
   const [loading, setLoading] = useState(false);
   const [imageUploaded, setImageUploaded] = useState("");
-
+  console.log("inside uploader: ", expId);
   const uploadImage = async (expId) => {
     const data = new FormData();
     data.append("experience", image);
@@ -45,7 +45,11 @@ const UploadExperiencePicture = ({ expId }) => {
           onChange={selected}
         />
       </div>
-      <button type="button" onClick={uploadImage} class="btn btn-primary">
+      <button
+        type="button"
+        onClick={() => uploadImage(expId)}
+        class="btn btn-primary"
+      >
         Upload
       </button>
       <div>
